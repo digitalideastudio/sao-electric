@@ -1,0 +1,18 @@
+{
+    "name": "my-app",
+    "version": "1.0.0",
+    "description": "My app",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc -b && vite build",
+        "build:prod": "tsc -b && vite build",
+        "lint": "eslint .",
+        "preview": "vite preview"
+    },
+    "author": "John Doe",
+    "license": "MIT",
+    "dependencies": {
+        "vite": "^5.0.0"
+    }
+}
