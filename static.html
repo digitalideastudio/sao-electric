@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectricPro - Professional Electrical Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'electric-blue': '#1E40AF',
+                        'slate-dark': '#1E293B',
+                        'slate-gray': '#64748B',
+                        'light-gray': '#F8FAFC',
+                        'border-gray': '#E2E8F0',
+                        'light-blue': '#DBEAFE',
+                        'green-light': '#DCFCE7',
+                        'green-dark': '#016630',
+                        'purple-light': '#F3E8FF',
+                        'purple-dark': '#6E11B0',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    fontSize: {
+                        'hero': ['60px', { lineHeight: '1.25', letterSpacing: '0.44%' }],
+                        'heading-2': ['36px', { lineHeight: '1.11', letterSpacing: '1.03%' }],
+                        'heading-3': ['20px', { lineHeight: '1.4', letterSpacing: '-2.25%' }],
+                        'body-lg': ['18px', { lineHeight: '1.56', letterSpacing: '-2.44%' }],
+                        'body': ['16px', { lineHeight: '1.5', letterSpacing: '-1.95%' }],
+                        'body-sm': ['14px', { lineHeight: '1.43', letterSpacing: '-1.07%' }],
+                        'button': ['14px', { lineHeight: '1.43', letterSpacing: '-1.07%' }],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-inter bg-white">
+    <!-- Header -->
+    <header class="bg-white/95 backdrop-blur-sm border-b border-border-gray sticky top-0 z-50">
+        <div class="max-w-[1359px] mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-electric-blue rounded flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold text-slate-dark">ElectricPro</span>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="flex items-center gap-6">
+                    <a href="#about" class="text-body text-slate-dark hover:text-electric-blue transition-colors">About</a>
+                    <a href="#services" class="text-body text-slate-dark hover:text-electric-blue transition-colors">Services</a>
+                    <a href="#team" class="text-body text-slate-dark hover:text-electric-blue transition-colors">Team</a>
+                    <a href="#projects" class="text-body text-slate-dark hover:text-electric-blue transition-colors">Projects</a>
+                    <a href="#contact" class="bg-electric-blue text-white px-4 py-2 rounded-lg text-button font-medium hover:bg-blue-700 transition-colors">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-white to-blue-50/20 py-20 px-4">
+        <div class="max-w-[1359px] mx-auto">
+            <div class="flex items-center gap-16">
+                <!-- Left Content -->
+                <div class="flex-1 max-w-[600px]">
+                    <h1 class="text-hero font-bold text-slate-dark mb-6">
+                        Professional <span class="text-electric-blue">Electrical</span><br>
+                        Services You Can Trust
+                    </h1>
+                    
+                    <p class="text-body-lg text-slate-gray mb-6">
+                        From residential wiring to industrial installations, our certified electricians deliver safe, reliable, and efficient electrical solutions for all your needs.
+                    </p>
+                    
+                    <!-- Features -->
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-5 h-5 bg-electric-blue rounded-full flex items-center justify-center">
+                                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="text-body text-slate-dark">Licensed & Insured Professionals</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-5 h-5 bg-electric-blue rounded-full flex items-center justify-center">
+                                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="text-body text-slate-dark">24/7 Emergency Services</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-5 h-5 bg-electric-blue rounded-full flex items-center justify-center">
+                                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="text-body text-slate-dark">Free Estimates & Consultations</span>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex gap-4">
+                        <button class="bg-electric-blue text-white px-6 py-3 rounded-lg text-button font-medium hover:bg-blue-700 transition-colors">
+                            Get Free Estimate
+                        </button>
+                        <button class="border border-electric-blue text-electric-blue px-6 py-3 rounded-lg text-button font-medium hover:bg-electric-blue hover:text-white transition-colors">
+                            Our Services
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Right Image -->
+                <div class="flex-1 max-w-[600px] relative">
+                    <img src="assets/hero-image.png" alt="Professional Electrician" class="w-full h-[800px] object-cover rounded-lg shadow-2xl">
+                    <!-- Experience Badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-electric-blue text-white p-4 rounded-lg shadow-lg">
+                        <div class="text-2xl font-bold">15+</div>
+                        <div class="text-sm">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4">
+        <div class="max-w-[1359px] mx-auto">
+            <div class="flex items-center gap-16 mb-16">
+                <!-- Left Content -->
+                <div class="flex-1 max-w-[600px]">
+                    <h2 class="text-heading-2 font-bold text-slate-dark mb-4">About ElectricPro</h2>
+                    <p class="text-body-lg text-slate-gray mb-4">
+                        With over 15 years of experience in the electrical industry, ElectricPro has become a trusted name for residential, commercial, and industrial electrical services.
+                    </p>
+                    <p class="text-body text-slate-gray mb-4">
+                        Our team of certified electricians is committed to providing safe, reliable, and efficient electrical solutions. We stay up-to-date with the latest electrical codes and technologies to ensure your projects are completed to the highest standards.
+                    </p>
+                    <p class="text-body text-slate-gray">
+                        From simple electrical repairs to complex industrial installations, we approach every project with professionalism, attention to detail, and a commitment to customer satisfaction.
+                    </p>
+                </div>
+                
+                <!-- Right Image -->
+                <div class="flex-1 max-w-[600px]">
+                    <img src="assets/about-image.png" alt="About ElectricPro" class="w-full h-[337px] object-cover rounded-lg shadow-lg">
+                </div>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-8 h-8 bg-electric-blue rounded-full mx-auto mb-3 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-bold text-slate-dark mb-2">500+</div>
+                    <div class="text-body-sm text-slate-gray">Projects Completed</div>
+                </div>
+                <div class="text-center">
+                    <div class="w-8 h-8 bg-electric-blue rounded-full mx-auto mb-3 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-bold text-slate-dark mb-2">200+</div>
+                    <div class="text-body-sm text-slate-gray">Happy Customers</div>
+                </div>
+                <div class="text-center">
+                    <div class="w-8 h-8 bg-electric-blue rounded-full mx-auto mb-3 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-bold text-slate-dark mb-2">15+</div>
+                    <div class="text-body-sm text-slate-gray">Years Experience</div>
+                </div>
+                <div class="text-center">
+                    <div class="w-8 h-8 bg-electric-blue rounded-full mx-auto mb-3 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-bold text-slate-dark mb-2">100%</div>
+                    <div class="text-body-sm text-slate-gray">Safety Record</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 px-4 bg-slate-50/30">
+        <div class="max-w-[1280px] mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-heading-2 font-bold text-slate-dark mb-4">Our Electrical Services</h2>
+                <p class="text-body-lg text-slate-gray max-w-2xl mx-auto">
+                    We offer comprehensive electrical services for residential, commercial, and industrial clients with a focus on safety, quality, and reliability.
+                </p>
+            </div>
+            
+            <!-- Services Grid -->
+            <div class="grid grid-cols-3 gap-6">
+                <!-- Residential Electrical -->
+                <div class="bg-white border border-border-gray rounded-xl p-6 shadow-sm">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 bg-electric-blue rounded-lg mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-heading-3 font-semibold text-slate-dark mb-2">Residential Electrical</h3>
+                        <p class="text-body text-slate-gray text-center">
+                            Complete home electrical services including wiring, outlets, lighting, and panel upgrades.
+                        </p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">Home Wiring</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">Outlet Installation</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">Lighting Design</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">Panel Upgrades</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commercial Electrical -->
+                <div class="bg-white border border-border-gray rounded-xl p-6 shadow-sm">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 bg-electric-blue rounded-lg mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-heading-3 font-semibold text-slate-dark mb-2">Commercial Electrical</h3>
+                        <p class="text-body text-slate-gray text-center">
+                            Professional electrical solutions for offices, retail spaces, and commercial buildings.
+                        </p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">Office Wiring</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">Emergency Lighting</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">Data Cabling</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">Security Systems</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industrial Electrical -->
+                <div class="bg-white border border-border-gray rounded-xl p-6 shadow-sm">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 bg-electric-blue rounded-lg mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-heading-3 font-semibold text-slate-dark mb-2">Industrial Electrical</h3>
+                        <p class="text-body text-slate-gray text-center">
+                            Heavy-duty electrical installations for manufacturing and industrial facilities.
+                        </p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">Motor Controls</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">Power Distribution</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">Equipment Wiring</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">Maintenance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency Services -->
+                <div class="bg-white border border-border-gray rounded-xl p-6 shadow-sm">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 bg-electric-blue rounded-lg mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-heading-3 font-semibold text-slate-dark mb-2">Emergency Services</h3>
+                        <p class="text-body text-slate-gray text-center">
+                            24/7 emergency electrical repairs and troubleshooting for urgent situations.
+                        </p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">Power Outages</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">Electrical Faults</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">Emergency Repairs</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">24/7 Support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LED Lighting -->
+                <div class="bg-white border border-border-gray rounded-xl p-6 shadow-sm">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 bg-electric-blue rounded-lg mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-heading-3 font-semibold text-slate-dark mb-2">LED Lighting</h3>
+                        <p class="text-body text-slate-gray text-center">
+                            Energy-efficient LED lighting solutions for all types of properties.
+                        </p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">LED Conversion</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">Smart Lighting</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">Landscape Lighting</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">Energy Savings</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safety Inspections -->
+                <div class="bg-white border border-border-gray rounded-xl p-6 shadow-sm">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 bg-electric-blue rounded-lg mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-heading-3 font-semibold text-slate-dark mb-2">Safety Inspections</h3>
+                        <p class="text-body text-slate-gray text-center">
+                            Comprehensive electrical safety inspections and code compliance services.
+                        </p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">Code Compliance</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">Safety Audits</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">Inspection Reports</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-electric-blue rounded-full"></div>
+                            <span class="text-body-sm text-slate-dark">Certification</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-16 px-4">
+        <div class="max-w-[1359px] mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-heading-2 font-bold text-slate-dark mb-4">Meet Our Expert Team</h2>
+                <p class="text-body-lg text-slate-gray max-w-2xl mx-auto">
+                    Our certified electricians bring years of experience and expertise to every project, ensuring safe and reliable electrical solutions.
+                </p>
+            </div>
+            
+            <!-- Team Grid -->
+            <div class="grid grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-white border border-border-gray rounded-xl overflow-hidden shadow-sm">
+                    <div class="relative h-64">
+                        <img src="assets/team-member-1.png" alt="Michael Johnson" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 bg-electric-blue/80 text-white px-3 py-1 rounded-lg text-sm font-medium">
+                            15+ years
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-heading-3 font-semibold text-slate-dark mb-1">Michael Johnson</h3>
+                        <p class="text-body text-electric-blue mb-3">Master Electrician & Owner</p>
+                        <p class="text-body-sm text-slate-gray">
+                            Licensed master electrician with expertise in residential and commercial electrical systems.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="bg-white border border-border-gray rounded-xl overflow-hidden shadow-sm">
+                    <div class="relative h-64">
+                        <img src="assets/team-member-2.png" alt="Sarah Davis" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 bg-electric-blue/80 text-white px-3 py-1 rounded-lg text-sm font-medium">
+                            10+ years
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-heading-3 font-semibold text-slate-dark mb-1">Sarah Davis</h3>
+                        <p class="text-body text-electric-blue mb-3">Electrical Engineer</p>
+                        <p class="text-body-sm text-slate-gray">
+                            Specializes in industrial electrical design and complex electrical system planning.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="bg-white border border-border-gray rounded-xl overflow-hidden shadow-sm">
+                    <div class="relative h-64">
+                        <img src="assets/team-member-3.png" alt="Robert Wilson" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 bg-electric-blue/80 text-white px-3 py-1 rounded-lg text-sm font-medium">
+                            12+ years
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-heading-3 font-semibold text-slate-dark mb-1">Robert Wilson</h3>
+                        <p class="text-body text-electric-blue mb-3">Senior Electrician</p>
+                        <p class="text-body-sm text-slate-gray">
+                            Expert in electrical installations, maintenance, and emergency electrical services.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 px-4 bg-slate-50/30">
+        <div class="max-w-[1280px] mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-heading-2 font-bold text-slate-dark mb-4">Recent Projects</h2>
+                <p class="text-body-lg text-slate-gray max-w-2xl mx-auto">
+                    Take a look at some of our recent electrical projects across residential, commercial, and industrial sectors.
+                </p>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="bg-white border border-border-gray rounded-xl overflow-hidden shadow-sm">
+                    <div class="relative h-48">
+                        <img src="assets/project-1.png" alt="Modern Office Complex" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-green-light text-green-dark px-3 py-1 rounded-lg text-xs font-medium">
+                            Commercial
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-heading-3 font-semibold text-slate-dark mb-3">Modern Office Complex</h3>
+                        <div class="flex items-center gap-4 mb-3 text-body-sm text-slate-gray">
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                </svg>
+                                Downtown Business District
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                                </svg>
+                                2024
+                            </div>
+                        </div>
+                        <p class="text-body-sm text-slate-gray">
+                            Complete electrical installation for a 5-story office building including LED lighting, power distribution, and smart building systems.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white border border-border-gray rounded-xl overflow-hidden shadow-sm">
+                    <div class="relative h-48">
+                        <img src="assets/project-2.png" alt="Luxury Home Electrical" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-light-blue text-electric-blue px-3 py-1 rounded-lg text-xs font-medium">
+                            Residential
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-heading-3 font-semibold text-slate-dark mb-3">Luxury Home Electrical</h3>
+                        <div class="flex items-center gap-4 mb-3 text-body-sm text-slate-gray">
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                </svg>
+                                Hillside Estates
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                                </svg>
+                                2024
+                            </div>
+                        </div>
+                        <p class="text-body-sm text-slate-gray">
+                            Full home rewiring and electrical panel upgrade for a 6,000 sq ft luxury residence with home automation integration.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white border border-border-gray rounded-xl overflow-hidden shadow-sm">
+                    <div class="relative h-48">
+                        <img src="assets/project-3.png" alt="Manufacturing Facility" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-purple-light text-purple-dark px-3 py-1 rounded-lg text-xs font-medium">
+                            Industrial
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-heading-3 font-semibold text-slate-dark mb-3">Manufacturing Facility</h3>
+                        <div class="flex items-center gap-4 mb-3 text-body-sm text-slate-gray">
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                </svg>
+                                Industrial Park
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                                </svg>
+                                2023
+                            </div>
+                        </div>
+                        <p class="text-body-sm text-slate-gray">
+                            High-voltage electrical installation for manufacturing equipment and facility-wide power distribution systems.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-white border border-border-gray rounded-xl overflow-hidden shadow-sm">
+                    <div class="relative h-48">
+                        <img src="assets/project-4.png" alt="Retail Center Upgrade" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-green-light text-green-dark px-3 py-1 rounded-lg text-xs font-medium">
+                            Commercial
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-heading-3 font-semibold text-slate-dark mb-3">Retail Center Upgrade</h3>
+                        <div class="flex items-center gap-4 mb-3 text-body-sm text-slate-gray">
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                </svg>
+                                Shopping District
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                                </svg>
+                                2023
+                            </div>
+                        </div>
+                        <p class="text-body-sm text-slate-gray">
+                            Electrical infrastructure upgrade for a 20-store retail center including energy-efficient lighting and power systems.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="bg-white border border-border-gray rounded-xl overflow-hidden shadow-sm">
+                    <div class="relative h-48">
+                        <img src="assets/project-5.png" alt="Smart Home Installation" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-light-blue text-electric-blue px-3 py-1 rounded-lg text-xs font-medium">
+                            Residential
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-heading-3 font-semibold text-slate-dark mb-3">Smart Home Installation</h3>
+                        <div class="flex items-center gap-4 mb-3 text-body-sm text-slate-gray">
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                </svg>
+                                Suburban Community
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                                </svg>
+                                2024
+                            </div>
+                        </div>
+                        <p class="text-body-sm text-slate-gray">
+                            Complete smart home electrical system with automated lighting, security integration, and energy management.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="bg-white border border-border-gray rounded-xl overflow-hidden shadow-sm">
+                    <div class="relative h-48">
+                        <img src="assets/project-6.png" alt="Hospital Emergency Power" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-green-light text-green-dark px-3 py-1 rounded-lg text-xs font-medium">
+                            Commercial
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-heading-3 font-semibold text-slate-dark mb-3">Hospital Emergency Power</h3>
+                        <div class="flex items-center gap-4 mb-3 text-body-sm text-slate-gray">
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                </svg>
+                                Medical Center
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                                </svg>
+                                2023
+                            </div>
+                        </div>
+                        <p class="text-body-sm text-slate-gray">
+                            Critical emergency power systems installation for hospital facility ensuring uninterrupted power supply.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-4">
+        <div class="max-w-[1359px] mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-heading-2 font-bold text-slate-dark mb-4">Get In Touch</h2>
+                <p class="text-body-lg text-slate-gray max-w-2xl mx-auto">
+                    Ready to start your electrical project? Contact us today for a free estimate and professional consultation.
+                </p>
+            </div>
+            
+            <div class="flex gap-8">
+                <!-- Contact Form -->
+                <div class="flex-1 bg-white border border-border-gray rounded-xl p-6 shadow-sm">
+                    <h3 class="text-xl font-semibold text-slate-dark mb-6">Request a Quote</h3>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-dark mb-2">Full Name</label>
+                                <input type="text" class="w-full px-3 py-2 border border-border-gray rounded-lg bg-light-gray focus:outline-none focus:ring-2 focus:ring-electric-blue" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-dark mb-2">Email</label>
+                                <input type="email" class="w-full px-3 py-2 border border-border-gray rounded-lg bg-light-gray focus:outline-none focus:ring-2 focus:ring-electric-blue" placeholder="john@example.com">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-dark mb-2">Phone</label>
+                                <input type="tel" class="w-full px-3 py-2 border border-border-gray rounded-lg bg-light-gray focus:outline-none focus:ring-2 focus:ring-electric-blue" placeholder="(555) 123-4567">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-dark mb-2">Service Type</label>
+                                <select class="w-full px-3 py-2 border border-border-gray rounded-lg bg-light-gray focus:outline-none focus:ring-2 focus:ring-electric-blue">
+                                    <option>Select a service</option>
+                                    <option>Residential Electrical</option>
+                                    <option>Commercial Electrical</option>
+                                    <option>Industrial Electrical</option>
+                                    <option>Emergency Service</option>
+                                    <option>Safety Inspection</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-dark mb-2">Project Details</label>
+                            <textarea rows="4" class="w-full px-3 py-2 border border-border-gray rounded-lg bg-light-gray focus:outline-none focus:ring-2 focus:ring-electric-blue" placeholder="Please describe your electrical project or service needs..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-electric-blue text-white py-3 rounded-lg text-button font-medium hover:bg-blue-700 transition-colors">
+                            Get Free Estimate
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="flex-1 space-y-6">
+                    <!-- Contact Cards -->
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-white border border-border-gray rounded-xl p-6 shadow-sm">
+                            <div class="flex items-start gap-4">
+                                <div class="w-6 h-6 bg-electric-blue rounded flex items-center justify-center flex-shrink-0 mt-1">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-dark mb-1">Phone</h4>
+                                    <p class="text-body text-slate-dark mb-1">(555) 123-4567</p>
+                                    <p class="text-body-sm text-slate-gray">Call us anytime</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white border border-border-gray rounded-xl p-6 shadow-sm">
+                            <div class="flex items-start gap-4">
+                                <div class="w-6 h-6 bg-electric-blue rounded flex items-center justify-center flex-shrink-0 mt-1">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-dark mb-1">Email</h4>
+                                    <p class="text-body text-slate-dark mb-1">info@electricpro.com</p>
+                                    <p class="text-body-sm text-slate-gray">Send us a message</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white border border-border-gray rounded-xl p-6 shadow-sm">
+                            <div class="flex items-start gap-4">
+                                <div class="w-6 h-6 bg-electric-blue rounded flex items-center justify-center flex-shrink-0 mt-1">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-dark mb-1">Address</h4>
+                                    <p class="text-body text-slate-dark mb-1">123 Electric Avenue, City, State 12345</p>
+                                    <p class="text-body-sm text-slate-gray">Visit our office</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white border border-border-gray rounded-xl p-6 shadow-sm">
+                            <div class="flex items-start gap-4">
+                                <div class="w-6 h-6 bg-electric-blue rounded flex items-center justify-center flex-shrink-0 mt-1">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-dark mb-1">Hours</h4>
+                                    <p class="text-body text-slate-dark mb-1">Mon-Fri: 7AM-6PM</p>
+                                    <p class="text-body-sm text-slate-gray">24/7 Emergency Service</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Emergency Service Card -->
+                    <div class="bg-electric-blue text-white rounded-xl p-6 shadow-sm">
+                        <h3 class="text-heading-3 font-semibold mb-3">24/7 Emergency Service</h3>
+                        <p class="text-body mb-4">
+                            Electrical emergency? We're here to help around the clock.
+                        </p>
+                        <button class="bg-white text-electric-blue px-6 py-3 rounded-lg text-button font-medium hover:bg-gray-100 transition-colors">
+                            Call Emergency Line
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-electric-blue text-white py-12 px-4">
+        <div class="max-w-[1359px] mx-auto">
+            <div class="grid grid-cols-4 gap-8 mb-8">
+                <!-- Company Info -->
+                <div class="col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 bg-white rounded flex items-center justify-center">
+                            <svg class="w-5 h-5 text-electric-blue" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold">ElectricPro</span>
+                    </div>
+                    <p class="text-body-sm text-white/80 mb-4">
+                        Professional electrical services for residential, commercial, and industrial clients. Licensed, insured, and committed to safety and quality.
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            <span class="text-body-sm">(555) 123-4567</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            <span class="text-body-sm">info@electricpro.com</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-body-sm">123 Electric Avenue, City, State 12345</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="font-semibold mb-4">Our Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-body-sm text-white/80 hover:text-white transition-colors">Residential Electrical</a></li>
+                        <li><a href="#" class="text-body-sm text-white/80 hover:text-white transition-colors">Commercial Electrical</a></li>
+                        <li><a href="#" class="text-body-sm text-white/80 hover:text-white transition-colors">Industrial Electrical</a></li>
+                        <li><a href="#" class="text-body-sm text-white/80 hover:text-white transition-colors">Emergency Services</a></li>
+                        <li><a href="#" class="text-body-sm text-white/80 hover:text-white transition-colors">LED Lighting</a></li>
+                        <li><a href="#" class="text-body-sm text-white/80 hover:text-white transition-colors">Safety Inspections</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-body-sm text-white/80 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#services" class="text-body-sm text-white/80 hover:text-white transition-colors">Our Services</a></li>
+                        <li><a href="#projects" class="text-body-sm text-white/80 hover:text-white transition-colors">Recent Projects</a></li>
+                        <li><a href="#team" class="text-body-sm text-white/80 hover:text-white transition-colors">Our Team</a></li>
+                        <li><a href="#contact" class="text-body-sm text-white/80 hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="text-body-sm text-white/80 hover:text-white transition-colors">Emergency Service</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Business Hours -->
+                <div>
+                    <h4 class="font-semibold mb-4">Business Hours</h4>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-body-sm">Monday - Friday:</span>
+                            <span class="text-body-sm">7:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-body-sm">Saturday:</span>
+                            <span class="text-body-sm">8:00 AM - 4:00 PM</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-body-sm">Sunday:</span>
+                            <span class="text-body-sm">Emergency Only</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 bg-white/10 rounded-lg p-3">
+                        <p class="text-button font-medium mb-1">24/7 Emergency Service Available</p>
+                        <p class="text-xs text-white/80">Call us anytime for urgent electrical issues</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="border-t border-white/20 pt-8">
+                <div class="flex justify-between items-center">
+                    <p class="text-body-sm text-white/80">© 2025 ElectricPro. All rights reserved.</p>
+                    <div class="flex gap-6">
+                        <a href="#" class="text-body-sm text-white/80 hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-body-sm text-white/80 hover:text-white transition-colors">Terms of Service</a>
+                        <a href="#" class="text-body-sm text-white/80 hover:text-white transition-colors">License Information</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your request! We will contact you soon.');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --color-electric-blue: #1E40AF;
+  --color-slate-dark: #1E293B;
+  --color-slate-gray: #64748B;
+  --color-light-gray: #F8FAFC;
+  --color-border-gray: #E2E8F0;
+  --color-light-blue: #DBEAFE;
+  --color-green-light: #DCFCE7;
+  --color-green-dark: #016630;
+  --color-purple-light: #F3E8FF;
+  --color-purple-dark: #6E11B0;
+  
+  --font-family-inter: Inter, sans-serif;
+  
+  --font-size-hero: 60px;
+  --line-height-hero: 1.25;
+  --letter-spacing-hero: 0.44%;
+  
+  --font-size-heading-2: 36px;
+  --line-height-heading-2: 1.11;
+  --letter-spacing-heading-2: 1.03%;
+  
+  --font-size-heading-3: 20px;
+  --line-height-heading-3: 1.4;
+  --letter-spacing-heading-3: -2.25%;
+  
+  --font-size-body-lg: 18px;
+  --line-height-body-lg: 1.56;
+  --letter-spacing-body-lg: -2.44%;
+  
+  --font-size-body: 16px;
+  --line-height-body: 1.5;
+  --letter-spacing-body: -1.95%;
+  
+  --font-size-body-sm: 14px;
+  --line-height-body-sm: 1.43;
+  --letter-spacing-body-sm: -1.07%;
+  
+  --font-size-button: 14px;
+  --line-height-button: 1.43;
+  --letter-spacing-button: -1.07%;
+}
