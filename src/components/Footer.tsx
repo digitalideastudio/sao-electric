@@ -11,7 +11,7 @@ export default function Footer() {
                   <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                 </svg>
               </div>
-              <span className="text-xl font-bold">ElectricPro</span>
+              <span className="text-xl font-bold">SAO Electric</span>
             </div>
             <p className="text-body-sm text-white/80 mb-4">
               Professional electrical services for residential, commercial, and industrial clients. Licensed, insured, and committed to safety and quality.
@@ -92,7 +92,7 @@ export default function Footer() {
         {/* Footer Bottom */}
         <div className="border-t border-white/20 pt-8">
           <div className="flex justify-between items-center">
-            <p className="text-body-sm text-white/80">© 2025 ElectricPro. All rights reserved.</p>
+            <p className="text-body-sm text-white/80">© 2025 SAO Electric. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Privacy Policy</a>
               <a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Terms of Service</a>

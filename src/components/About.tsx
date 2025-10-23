@@ -13,9 +13,9 @@ export default function About() {
         <div className="flex items-center gap-16 mb-16">
           {/* Left Content */}
           <div className="flex-1 max-w-[600px]">
-            <h2 className="text-heading-2 font-bold text-slate-dark mb-4">About ElectricPro</h2>
+            <h2 className="text-heading-2 font-bold text-slate-dark mb-4">About SAO Electric</h2>
             <p className="text-body-lg text-slate-gray mb-4">
-              With over 15 years of experience in the electrical industry, ElectricPro has become a trusted name for residential, commercial, and industrial electrical services.
+              With over 15 years of experience in the electrical industry, SAO Electric has become a trusted name for residential, commercial, and industrial electrical services.
             </p>
             <p className="text-body text-slate-gray mb-4">
               Our team of certified electricians is committed to providing safe, reliable, and efficient electrical solutions. We stay up-to-date with the latest electrical codes and technologies to ensure your projects are completed to the highest standards.
@@ -27,7 +27,7 @@ export default function About() {
           
           {/* Right Image */}
           <div className="flex-1 max-w-[600px]">
-            <img src="/assets/about-image.png" alt="About ElectricPro" className="w-full h-[337px] object-cover rounded-lg shadow-lg" />
+            <img src="/assets/about-image.png" alt="About SAO Electric" className="w-full h-[337px] object-cover rounded-lg shadow-lg" />
           </div>
         </div>
         
