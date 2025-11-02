@@ -14,7 +14,7 @@ export default function Footer() {
               <span className="text-xl font-bold">SAO Electric</span>
             </div>
             <p className="text-body-sm text-white/80 mb-4">
-              Professional electrical services for residential, commercial, and industrial clients. Licensed, insured, and committed to safety and quality.
+            Наша команда електриків, інженерів і автоматників, які створюють електросистеми нового покоління.
             </p>
             <div className="space-y-2">
               <div className="flex items-center gap-2">
@@ -34,57 +34,57 @@ export default function Footer() {
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
                 </svg>
-                <span className="text-body-sm">123 Electric Avenue, City, State 12345</span>
+                <span className="text-body-sm">вул. Січових Стрільців, 123</span>
               </div>
             </div>
           </div>
           
           {/* Services */}
           <div>
-            <h4 className="font-semibold mb-4">Our Services</h4>
+            <h4 className="font-semibold mb-4">Наші послуги</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Residential Electrical</a></li>
-              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Commercial Electrical</a></li>
-              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Industrial Electrical</a></li>
-              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Emergency Services</a></li>
-              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">LED Lighting</a></li>
-              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Safety Inspections</a></li>
+              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Електрика для житлових приміщень</a></li>
+              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Електрика для комерційних приміщень</a></li>
+              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Електромонтаж</a></li>
+              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Системи "Розумного Дому"</a></li>
+              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Відеонагляд</a></li>
+              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Блискавкозахист</a></li>
             </ul>
           </div>
           
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
+            <h4 className="font-semibold mb-4">Швидкі посилання</h4>
             <ul className="space-y-2">
-              <li><a href="#about" className="text-body-sm text-white/80 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#services" className="text-body-sm text-white/80 hover:text-white transition-colors">Our Services</a></li>
-              <li><a href="#projects" className="text-body-sm text-white/80 hover:text-white transition-colors">Recent Projects</a></li>
-              <li><a href="#team" className="text-body-sm text-white/80 hover:text-white transition-colors">Our Team</a></li>
-              <li><a href="#contact" className="text-body-sm text-white/80 hover:text-white transition-colors">Contact Us</a></li>
-              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Emergency Service</a></li>
+              <li><a href="#about" className="text-body-sm text-white/80 hover:text-white transition-colors">Про нас</a></li>
+              <li><a href="#services" className="text-body-sm text-white/80 hover:text-white transition-colors">Наші послуги</a></li>
+              <li><a href="#projects" className="text-body-sm text-white/80 hover:text-white transition-colors">Недавні проекти</a></li>
+              <li><a href="#team" className="text-body-sm text-white/80 hover:text-white transition-colors">Наша команда</a></li>
+              <li><a href="#contact" className="text-body-sm text-white/80 hover:text-white transition-colors">Зв’язатися з нами</a></li>
+              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Аварійна служба</a></li>
             </ul>
           </div>
           
           {/* Business Hours */}
           <div>
-            <h4 className="font-semibold mb-4">Business Hours</h4>
+              <h4 className="font-semibold mb-4">Робочі години</h4>
             <div className="space-y-2">
               <div className="flex justify-between">
-                <span className="text-body-sm">Monday - Friday:</span>
-                <span className="text-body-sm">7:00 AM - 6:00 PM</span>
+                <span className="text-body-sm">Пн-Пт:</span>
+                <span className="text-body-sm">7:00 - 19:00</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-body-sm">Saturday:</span>
-                <span className="text-body-sm">8:00 AM - 4:00 PM</span>
+                <span className="text-body-sm">Субота:</span>
+                <span className="text-body-sm">8:00 - 16:00</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-body-sm">Sunday:</span>
-                <span className="text-body-sm">Emergency Only</span>
+                <span className="text-body-sm">Неділя:</span>
+                <span className="text-body-sm">Вихідний</span>
               </div>
             </div>
             <div className="mt-4 bg-white/10 rounded-lg p-3">
-              <p className="text-button font-medium mb-1">24/7 Emergency Service Available</p>
-              <p className="text-xs text-white/80">Call us anytime for urgent electrical issues</p>
+              <p className="text-button font-medium mb-1">24/7 аварійна служба доступна</p>
+              <p className="text-xs text-white/80">Викличте нас в будь-який час для електричних проблем</p>
             </div>
           </div>
         </div>
@@ -92,11 +92,11 @@ export default function Footer() {
         {/* Footer Bottom */}
         <div className="border-t border-white/20 pt-8">
           <div className="flex justify-between items-center">
-            <p className="text-body-sm text-white/80">© 2025 SAO Electric. All rights reserved.</p>
+            <p className="text-body-sm text-white/80">© 2025 SAO Electric. Всі права застережено.</p>
             <div className="flex gap-6">
-              <a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">License Information</a>
+              <a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Політика конфіденційності</a>
+              <a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Умови обслуговування</a>
+              <a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Інформація про ліцензію</a>
             </div>
           </div>
         </div>

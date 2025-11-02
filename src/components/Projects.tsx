@@ -4,57 +4,57 @@ export default function Projects() {
   const projects = [
     {
       image: "/assets/project-1.png",
-      title: "Modern Office Complex",
-      category: "Commercial",
+      title: "Сучасний офіс",
+      category: "Комерційний",
       categoryColor: "bg-green-light text-green-dark",
-      location: "Downtown Business District",
+      location: "Бізнес-центр",
       year: "2024",
-      description: "Complete electrical installation for a 5-story office building including LED lighting, power distribution, and smart building systems."
+      description: "Повний електричний монтаж для 5-поверхового офісного будинку, включаючи LED освітлення, розподіл потужності та системи «Розумного Будинку»."
     },
     {
       image: "/assets/project-2.png",
-      title: "Luxury Home Electrical",
-      category: "Residential",
+      title: "Розкішний будинок",
+      category: "Житловий",
       categoryColor: "bg-light-blue text-electric-blue",
-      location: "Hillside Estates",
+      location: "Гірські будинки на Драгобраті",
       year: "2024",
-      description: "Full home rewiring and electrical panel upgrade for a 6,000 sq ft luxury residence with home automation integration."
+      description: "Повний електричний ремонт та заміна електричного панелі для 6,000 кв. футів розкішного житлового будинку з інтеграцією системи «Розумного Будинку»."
     },
     {
       image: "/assets/project-3.png",
-      title: "Manufacturing Facility",
-      category: "Industrial",
+      title: "Виробничі об'єкти",
+      category: "Промисловий",
       categoryColor: "bg-purple-light text-purple-dark",
-      location: "Industrial Park",
+      location: "Промисловий парк",
       year: "2023",
-      description: "High-voltage electrical installation for manufacturing equipment and facility-wide power distribution systems."
+      description: "Високовольтний електричний монтаж для виробничого обладнання та розподілу потужності по всьому виробничому комплексу."
     },
     {
       image: "/assets/project-4.png",
-      title: "Retail Center Upgrade",
-      category: "Commercial",
+      title: "Оновлення торгового центру",
+      category: "Комерційний",
       categoryColor: "bg-green-light text-green-dark",
-      location: "Shopping District",
+      location: "Торговий район",
       year: "2023",
-      description: "Electrical infrastructure upgrade for a 20-store retail center including energy-efficient lighting and power systems."
+      description: "Електрична інфраструктура оновлення для 20-поверхового торгового центру, включаючи енергоефективне освітлення та системи розподілу потужності."
     },
     {
       image: "/assets/project-5.png",
-      title: "Smart Home Installation",
-      category: "Residential",
+      title: "Розумний будинок",
+      category: "Житловий",
       categoryColor: "bg-light-blue text-electric-blue",
-      location: "Suburban Community",
+      location: "Суб'єктна громада",
       year: "2024",
-      description: "Complete smart home electrical system with automated lighting, security integration, and energy management."
+      description: "Повний електричний системі «Розумного Будинку»."
     },
     {
       image: "/assets/project-6.png",
-      title: "Hospital Emergency Power",
-      category: "Commercial",
+      title: "Аварійна електропостачання лікарні",
+      category: "Комерційний",
       categoryColor: "bg-green-light text-green-dark",
-      location: "Medical Center",
+      location: "Лікарня",
       year: "2023",
-      description: "Critical emergency power systems installation for hospital facility ensuring uninterrupted power supply."
+      description: "Критичні аварійні системи електропостачання для лікарні, що гарантують безперервне електропостачання."
     }
   ];
 
@@ -62,9 +62,9 @@ export default function Projects() {
     <section id="projects" className="py-16 px-4 bg-slate-50/30">
       <div className="max-w-[1280px] mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-heading-2 font-bold text-slate-dark mb-4">Recent Projects</h2>
+          <h2 className="text-heading-2 font-bold text-slate-dark mb-4">Нещодавні проекти</h2>
           <p className="text-body-lg text-slate-gray max-w-2xl mx-auto">
-            Take a look at some of our recent electrical projects across residential, commercial, and industrial sectors.
+            Подивіться на деякі з наших нещодавніх електричних проектів у житловому, комерційному та промисловому секторах.
           </p>
         </div>
         

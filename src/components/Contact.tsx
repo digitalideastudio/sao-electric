@@ -3,7 +3,7 @@ import ContactCard from './ContactCard';
 export default function Contact() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert('Thank you for your request! We will contact you soon.');
+    alert('Дякуємо за вашу заявку! Ми зв’яжемося з вами найближчим часом.');
   };
 
   const phoneIcon = (
@@ -35,51 +35,49 @@ export default function Contact() {
     <section id="contact" className="py-16 px-4">
       <div className="max-w-[1359px] mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-heading-2 font-bold text-slate-dark mb-4">Get In Touch</h2>
+          <h2 className="text-heading-2 font-bold text-slate-dark mb-4">Наші контакти</h2>
           <p className="text-body-lg text-slate-gray max-w-2xl mx-auto">
-            Ready to start your electrical project? Contact us today for a free estimate and professional consultation.
+          Зв’яжіться з нами для отримання безкоштовного оцінювання електротехнічних рішень або запиту про наші послуги.
           </p>
         </div>
         
         <div className="flex gap-8">
           {/* Contact Form */}
           <div className="flex-1 bg-white border border-border-gray rounded-xl p-6 shadow-sm">
-            <h3 className="text-xl font-semibold text-slate-dark mb-6">Request a Quote</h3>
+            <h3 className="text-xl font-semibold text-slate-dark mb-6"> Залиште заявку на безкоштовну оцінку</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-dark mb-2">Full Name</label>
-                  <input type="text" className="w-full px-3 py-2 border border-border-gray rounded-lg bg-light-gray focus:outline-none focus:ring-2 focus:ring-electric-blue" placeholder="John Doe" />
+                  <label className="block text-sm font-medium text-slate-dark mb-2">Прізвище та ім’я</label>
+                  <input type="text" className="w-full px-3 py-2 border border-border-gray rounded-lg bg-light-gray focus:outline-none focus:ring-2 focus:ring-electric-blue" placeholder="Іван Петренко" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-dark mb-2">Email</label>
-                  <input type="email" className="w-full px-3 py-2 border border-border-gray rounded-lg bg-light-gray focus:outline-none focus:ring-2 focus:ring-electric-blue" placeholder="john@example.com" />
+                  <label className="block text-sm font-medium text-slate-dark mb-2">Пошта</label>
+                  <input type="email" className="w-full px-3 py-2 border border-border-gray rounded-lg bg-light-gray focus:outline-none focus:ring-2 focus:ring-electric-blue" placeholder="ivan@example.com" />
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-dark mb-2">Phone</label>
+                  <label className="block text-sm font-medium text-slate-dark mb-2">Номер телефону</label>
                   <input type="tel" className="w-full px-3 py-2 border border-border-gray rounded-lg bg-light-gray focus:outline-none focus:ring-2 focus:ring-electric-blue" placeholder="(555) 123-4567" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-dark mb-2">Service Type</label>
+                  <label className="block text-sm font-medium text-slate-dark mb-2">Вид послуги</label>
                   <select className="w-full px-3 py-2 border border-border-gray rounded-lg bg-light-gray focus:outline-none focus:ring-2 focus:ring-electric-blue">
-                    <option>Select a service</option>
-                    <option>Residential Electrical</option>
-                    <option>Commercial Electrical</option>
-                    <option>Industrial Electrical</option>
-                    <option>Emergency Service</option>
-                    <option>Safety Inspection</option>
-                    <option>Other</option>
+                    <option>Вибір послуги</option>
+                    <option>Електрика для житлових приміщень</option>
+                    <option>Електрика для комерційних приміщень</option>
+                    <option>Електрика для промислових приміщень</option>
+                    <option>Інше</option>
                   </select>
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-slate-dark mb-2">Project Details</label>
-                <textarea rows={4} className="w-full px-3 py-2 border border-border-gray rounded-lg bg-light-gray focus:outline-none focus:ring-2 focus:ring-electric-blue" placeholder="Please describe your electrical project or service needs..."></textarea>
+                <label className="block text-sm font-medium text-slate-dark mb-2">  </label>
+                <textarea rows={4} className="w-full px-3 py-2 border border-border-gray rounded-lg bg-light-gray focus:outline-none focus:ring-2 focus:ring-electric-blue" placeholder="Опишіть ваш проект або потреби"></textarea>
               </div>
               <button type="submit" className="w-full bg-electric-blue text-white py-3 rounded-lg text-button font-medium hover:bg-blue-700 transition-colors">
-                Get Free Estimate
+                Отримати безкоштовну оцінку
               </button>
             </form>
           </div>
@@ -90,38 +88,38 @@ export default function Contact() {
             <div className="grid grid-cols-2 gap-6">
               <ContactCard
                 icon={phoneIcon}
-                title="Phone"
+                title="Телефон"
                 value="(555) 123-4567"
-                subtitle="Call us anytime"
+                subtitle="Викличте нас в будь-який час"
               />
               <ContactCard
                 icon={emailIcon}
-                title="Email"
+                title="Email пошта"
                 value="info@electricpro.com"
-                subtitle="Send us a message"
+                subtitle="Надішліть нам повідомлення"
               />
               <ContactCard
                 icon={locationIcon}
-                title="Address"
-                value="123 Electric Avenue, City, State 12345"
-                subtitle="Visit our office"
+                title="Адреса"
+                value="вул. Січових Стрільців, 123"
+                subtitle="Відвідайте наш офіс"
               />
               <ContactCard
                 icon={clockIcon}
-                title="Hours"
-                value="Mon-Fri: 7AM-6PM"
-                subtitle="24/7 Emergency Service"
+                title="Робочі години"
+                value="Пн-Пт: 7:00-19:00"
+                subtitle="24/7 аварійна служба"
               />
             </div>
             
             {/* Emergency Service Card */}
             <div className="bg-electric-blue text-white rounded-xl p-6 shadow-sm">
-              <h3 className="text-heading-3 font-semibold mb-3">24/7 Emergency Service</h3>
+              <h3 className="text-heading-3 font-semibold mb-3">24/7 аварійна служба</h3>
               <p className="text-body mb-4">
-                Electrical emergency? We're here to help around the clock.
+                Електрична аварія? Ми тут, щоб допомогти вам 24/7.
               </p>
               <button className="bg-white text-electric-blue px-6 py-3 rounded-lg text-button font-medium hover:bg-gray-100 transition-colors">
-                Call Emergency Line
+                Викликати аварійну бригаду
               </button>
             </div>
           </div>

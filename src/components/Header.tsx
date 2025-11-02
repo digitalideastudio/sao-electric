@@ -25,11 +25,11 @@ export default function Header() {
           
           {/* Navigation */}
           <nav className="flex items-center gap-6">
-            <button onClick={() => scrollToSection('about')} className="text-body text-slate-dark hover:text-electric-blue transition-colors">About</button>
-            <button onClick={() => scrollToSection('services')} className="text-body text-slate-dark hover:text-electric-blue transition-colors">Services</button>
-            <button onClick={() => scrollToSection('team')} className="text-body text-slate-dark hover:text-electric-blue transition-colors">Team</button>
-            <button onClick={() => scrollToSection('projects')} className="text-body text-slate-dark hover:text-electric-blue transition-colors">Projects</button>
-            <button onClick={() => scrollToSection('contact')} className="bg-electric-blue text-white px-4 py-2 rounded-lg text-button font-medium hover:bg-blue-700 transition-colors">Contact</button>
+            <button onClick={() => scrollToSection('about')} className="text-body text-slate-dark hover:text-electric-blue transition-colors">Про нас</button>
+            <button onClick={() => scrollToSection('services')} className="text-body text-slate-dark hover:text-electric-blue transition-colors">Наші послуги</button>
+            <button onClick={() => scrollToSection('team')} className="text-body text-slate-dark hover:text-electric-blue transition-colors">Наша команда</button>
+            <button onClick={() => scrollToSection('projects')} className="text-body text-slate-dark hover:text-electric-blue transition-colors">Нещодавні проекти</button>
+            <button onClick={() => scrollToSection('contact')} className="bg-electric-blue text-white px-4 py-2 rounded-lg text-button font-medium hover:bg-blue-700 transition-colors">Зв’язатися з нами</button>
           </nav>
         </div>
       </div>

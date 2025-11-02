@@ -10,39 +10,39 @@ export default function Services() {
   const services = [
     {
       icon: starIcon,
-      title: "Residential Electrical",
-      description: "Complete home electrical services including wiring, outlets, lighting, and panel upgrades.",
-      features: ["Home Wiring", "Outlet Installation", "Lighting Design", "Panel Upgrades"]
+      title: "Електрика для житлових приміщень",
+      description: "Повний спектр послуг з електрики для будинків, включаючи проводку, розетки, освітлення та оновлення щитків.",
+      features: ["Проводка в будинку", "Встановлення розеток", "Дизайн освітлення", "Оновлення щитків"]
     },
     {
       icon: starIcon,
-      title: "Commercial Electrical",
-      description: "Professional electrical solutions for offices, retail spaces, and commercial buildings.",
-      features: ["Office Wiring", "Emergency Lighting", "Data Cabling", "Security Systems"]
+      title: "Електрика для комерційних приміщень",
+      description: "Професійні електричні рішення для офісів, торгових площ та комерційних будівель.",
+      features: ["Офісна проводка", "Аварійне освітлення", "Кабельні системи", "Системи безпеки"]
     },
     {
       icon: starIcon,
-      title: "Industrial Electrical",
-      description: "Heavy-duty electrical installations for manufacturing and industrial facilities.",
-      features: ["Motor Controls", "Power Distribution", "Equipment Wiring", "Maintenance"]
+      title: "Промислова електрика",
+      description: "Надійні електричні інсталяції для виробничих та промислових об'єктів.",
+      features: ["Керування двигунами", "Розподіл енергії", "Проводка обладнання", "Обслуговування"]
     },
     {
       icon: starIcon,
-      title: "Emergency Services",
-      description: "24/7 emergency electrical repairs and troubleshooting for urgent situations.",
-      features: ["Power Outages", "Electrical Faults", "Emergency Repairs", "24/7 Support"]
+      title: "Аварійні послуги",
+      description: "Кваліфікований аварійний ремонт електрики та усунення несправностей 24/7.",
+      features: ["Відключення живлення", "Електричні несправності", "Аварійний ремонт", "Підтримка 24/7"]
     },
     {
       icon: starIcon,
-      title: "LED Lighting",
-      description: "Energy-efficient LED lighting solutions for all types of properties.",
-      features: ["LED Conversion", "Smart Lighting", "Landscape Lighting", "Energy Savings"]
+      title: "LED освітлення",
+      description: "Енергоефективні LED рішення для всіх типів об'єктів.",
+      features: ["Перехід на LED", "Розумне освітлення", "Ландшафтне освітлення", "Економія енергії"]
     },
     {
       icon: starIcon,
-      title: "Safety Inspections",
-      description: "Comprehensive electrical safety inspections and code compliance services.",
-      features: ["Code Compliance", "Safety Audits", "Inspection Reports", "Certification"]
+      title: "Технічні огляди",
+      description: "Комплексні перевірки електричної безпеки та відповідність стандартам.",
+      features: ["Відповідність стандартам", "Аудит безпеки", "Звіти про огляди", "Сертифікація"]
     }
   ];
 
@@ -50,10 +50,9 @@ export default function Services() {
     <section id="services" className="py-16 px-4 bg-slate-50/30">
       <div className="max-w-[1280px] mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-heading-2 font-bold text-slate-dark mb-4">Our Electrical Services</h2>
+          <h2 className="text-heading-2 font-bold text-slate-dark mb-4">Що ми пропонуємо</h2>
           <p className="text-body-lg text-slate-gray max-w-2xl mx-auto">
-            We offer comprehensive electrical services for residential, commercial, and industrial clients with a focus on safety, quality, and reliability.
-          </p>
+          Ми реалізуємо повний цикл робіт — від проєкту до запуску системи:          </p>
         </div>
         
         {/* Services Grid */}

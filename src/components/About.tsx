@@ -13,30 +13,28 @@ export default function About() {
         <div className="flex items-center gap-16 mb-16">
           {/* Left Content */}
           <div className="flex-1 max-w-[600px]">
-            <h2 className="text-heading-2 font-bold text-slate-dark mb-4">About SAO Electric</h2>
+            <h2 className="text-heading-2 font-bold text-slate-dark mb-4">Про SAO Electric</h2>
             <p className="text-body-lg text-slate-gray mb-4">
-              With over 15 years of experience in the electrical industry, SAO Electric has become a trusted name for residential, commercial, and industrial electrical services.
-            </p>
+            Маючи <span className="text-electric-blue">понад 10 років досвіду</span> у сфері електрики, SAO Electric стала надійним партнером для житлових, комерційних та промислових об’єктів.            </p>
             <p className="text-body text-slate-gray mb-4">
-              Our team of certified electricians is committed to providing safe, reliable, and efficient electrical solutions. We stay up-to-date with the latest electrical codes and technologies to ensure your projects are completed to the highest standards.
-            </p>
+            Наша команда <span className="text-electric-blue">сертифікованих електриків</span> старанно забезпечує безпечні, надійні та ефективні електротехнічні рішення.
+            Ми постійно стежимо за оновленнями стандартів і технологій, щоб кожен проєкт відповідав найвищим вимогам галузі.            </p>
             <p className="text-body text-slate-gray">
-              From simple electrical repairs to complex industrial installations, we approach every project with professionalism, attention to detail, and a commitment to customer satisfaction.
-            </p>
+            Від простих ремонтів до складних промислових систем — ми підходимо до кожного завдання з <span className="text-electric-blue">професіоналізмом, увагою до деталей</span> та щирим прагненням до <span className="text-electric-blue">задоволення клієнта</span>.            </p>
           </div>
           
           {/* Right Image */}
           <div className="flex-1 max-w-[600px]">
-            <img src="/assets/about-image.png" alt="About SAO Electric" className="w-full h-[337px] object-cover rounded-lg shadow-lg" />
+            <img src="/assets/about-image.png" alt="Про SAO Electric" className="w-full h-[337px] object-cover rounded-lg shadow-lg" />
           </div>
         </div>
         
         {/* Stats */}
         <div className="grid grid-cols-4 gap-8">
-          <StatItem icon={starIcon} value="500+" label="Projects Completed" />
-          <StatItem icon={starIcon} value="200+" label="Happy Customers" />
-          <StatItem icon={starIcon} value="15+" label="Years Experience" />
-          <StatItem icon={starIcon} value="100%" label="Safety Record" />
+          <StatItem icon={starIcon} value="100+" label="Успішно виконаних проєктів" />
+          <StatItem icon={starIcon} value="50+" label="Задоволених клієнтів" />
+          <StatItem icon={starIcon} value="10+" label="Років досвіду" />
+          <StatItem icon={starIcon} value="100%" label="Гарантія безпеки" />
         </div>
       </div>
     </section>
