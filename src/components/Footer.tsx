@@ -1,8 +1,8 @@
 export default function Footer() {
   return (
-    <footer className="bg-electric-blue text-white py-12 px-4">
-      <div className="max-w-[1359px] mx-auto">
-        <div className="grid grid-cols-4 gap-8 mb-8">
+    <footer className="bg-electric-blue dark:bg-slate-900 text-white py-8 md:py-12 px-4">
+      <div className="max-w-[1300px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8">
           {/* Company Info */}
           <div className="col-span-1">
             <div className="flex items-center gap-2 mb-4">
@@ -43,12 +43,12 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Наші послуги</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Електрика для житлових приміщень</a></li>
-              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Електрика для комерційних приміщень</a></li>
-              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Електромонтаж</a></li>
-              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Системи "Розумного Дому"</a></li>
-              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Відеонагляд</a></li>
-              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Блискавкозахист</a></li>
+              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors cursor-pointer">Електрика для житлових приміщень</a></li>
+              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors cursor-pointer">Електрика для комерційних приміщень</a></li>
+              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors cursor-pointer">Електромонтаж</a></li>
+              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors cursor-pointer">Системи "Розумного Дому"</a></li>
+              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors cursor-pointer">Відеонагляд</a></li>
+              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors cursor-pointer">Блискавкозахист</a></li>
             </ul>
           </div>
           
@@ -56,12 +56,12 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Швидкі посилання</h4>
             <ul className="space-y-2">
-              <li><a href="#about" className="text-body-sm text-white/80 hover:text-white transition-colors">Про нас</a></li>
-              <li><a href="#services" className="text-body-sm text-white/80 hover:text-white transition-colors">Наші послуги</a></li>
-              <li><a href="#projects" className="text-body-sm text-white/80 hover:text-white transition-colors">Недавні проекти</a></li>
-              <li><a href="#team" className="text-body-sm text-white/80 hover:text-white transition-colors">Наша команда</a></li>
-              <li><a href="#contact" className="text-body-sm text-white/80 hover:text-white transition-colors">Зв’язатися з нами</a></li>
-              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Аварійна служба</a></li>
+              <li><a href="#about" className="text-body-sm text-white/80 hover:text-white transition-colors cursor-pointer">Про нас</a></li>
+              <li><a href="#services" className="text-body-sm text-white/80 hover:text-white transition-colors cursor-pointer">Наші послуги</a></li>
+              <li><a href="#projects" className="text-body-sm text-white/80 hover:text-white transition-colors cursor-pointer">Недавні проекти</a></li>
+              <li><a href="#team" className="text-body-sm text-white/80 hover:text-white transition-colors cursor-pointer">Наша команда</a></li>
+              <li><a href="#contact" className="text-body-sm text-white/80 hover:text-white transition-colors cursor-pointer">Зв'язатися з нами</a></li>
+              <li><a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors cursor-pointer">Аварійна служба</a></li>
             </ul>
           </div>
           
@@ -90,13 +90,13 @@ export default function Footer() {
         </div>
         
         {/* Footer Bottom */}
-        <div className="border-t border-white/20 pt-8">
-          <div className="flex justify-between items-center">
+        <div className="border-t border-white/20 pt-6 md:pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-body-sm text-white/80">© 2025 SAO Electric. Всі права застережено.</p>
-            <div className="flex gap-6">
-              <a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Політика конфіденційності</a>
-              <a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Умови обслуговування</a>
-              <a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors">Інформація про ліцензію</a>
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+              <a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors cursor-pointer">Політика конфіденційності</a>
+              <a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors cursor-pointer">Умови обслуговування</a>
+              <a href="#" className="text-body-sm text-white/80 hover:text-white transition-colors cursor-pointer">Інформація про ліцензію</a>
             </div>
           </div>
         </div>

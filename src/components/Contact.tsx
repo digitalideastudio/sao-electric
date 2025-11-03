@@ -32,38 +32,38 @@ export default function Contact() {
   );
 
   return (
-    <section id="contact" className="py-16 px-4">
-      <div className="max-w-[1359px] mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-heading-2 font-bold text-slate-dark mb-4">Наші контакти</h2>
-          <p className="text-body-lg text-slate-gray max-w-2xl mx-auto">
-          Зв’яжіться з нами для отримання безкоштовного оцінювання електротехнічних рішень або запиту про наші послуги.
+    <section id="contact" className="py-12 md:py-16 px-4 bg-white dark:bg-slate-900">
+      <div className="max-w-[1300px] mx-auto">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl md:text-heading-2 font-bold text-slate-dark dark:text-white mb-4">Наші контакти</h2>
+          <p className="text-base md:text-body-lg text-slate-gray dark:text-slate-300 max-w-2xl mx-auto">
+          Зв'яжіться з нами для отримання безкоштовного оцінювання електротехнічних рішень або запиту про наші послуги.
           </p>
         </div>
         
-        <div className="flex gap-8">
+        <div className="flex flex-col lg:flex-row gap-8">
           {/* Contact Form */}
-          <div className="flex-1 bg-white border border-border-gray rounded-xl p-6 shadow-sm">
-            <h3 className="text-xl font-semibold text-slate-dark mb-6"> Залиште заявку на безкоштовну оцінку</h3>
+          <div className="flex-1 bg-white dark:bg-slate-800 border border-border-gray dark:border-slate-700 rounded-xl p-4 md:p-6 shadow-sm">
+            <h3 className="text-lg md:text-xl font-semibold text-slate-dark dark:text-white mb-6"> Залиште заявку на безкоштовну оцінку</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-dark mb-2">Прізвище та ім’я</label>
-                  <input type="text" className="w-full px-3 py-2 border border-border-gray rounded-lg bg-light-gray focus:outline-none focus:ring-2 focus:ring-electric-blue" placeholder="Іван Петренко" />
+                  <label className="block text-sm font-medium text-slate-dark dark:text-white mb-2">Прізвище та ім'я</label>
+                  <input type="text" className="w-full px-3 py-2 border border-border-gray dark:border-slate-700 rounded-lg bg-light-gray dark:bg-slate-700 text-slate-dark dark:text-white focus:outline-none focus:ring-2 focus:ring-electric-blue" placeholder="Іван Петренко" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-dark mb-2">Пошта</label>
-                  <input type="email" className="w-full px-3 py-2 border border-border-gray rounded-lg bg-light-gray focus:outline-none focus:ring-2 focus:ring-electric-blue" placeholder="ivan@example.com" />
+                  <label className="block text-sm font-medium text-slate-dark dark:text-white mb-2">Пошта</label>
+                  <input type="email" className="w-full px-3 py-2 border border-border-gray dark:border-slate-700 rounded-lg bg-light-gray dark:bg-slate-700 text-slate-dark dark:text-white focus:outline-none focus:ring-2 focus:ring-electric-blue" placeholder="ivan@example.com" />
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-dark mb-2">Номер телефону</label>
-                  <input type="tel" className="w-full px-3 py-2 border border-border-gray rounded-lg bg-light-gray focus:outline-none focus:ring-2 focus:ring-electric-blue" placeholder="(555) 123-4567" />
+                  <label className="block text-sm font-medium text-slate-dark dark:text-white mb-2">Номер телефону</label>
+                  <input type="tel" className="w-full px-3 py-2 border border-border-gray dark:border-slate-700 rounded-lg bg-light-gray dark:bg-slate-700 text-slate-dark dark:text-white focus:outline-none focus:ring-2 focus:ring-electric-blue" placeholder="(555) 123-4567" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-dark mb-2">Вид послуги</label>
-                  <select className="w-full px-3 py-2 border border-border-gray rounded-lg bg-light-gray focus:outline-none focus:ring-2 focus:ring-electric-blue">
+                  <label className="block text-sm font-medium text-slate-dark dark:text-white mb-2">Вид послуги</label>
+                  <select className="w-full px-3 py-2 border border-border-gray dark:border-slate-700 rounded-lg bg-light-gray dark:bg-slate-700 text-slate-dark dark:text-white focus:outline-none focus:ring-2 focus:ring-electric-blue">
                     <option>Вибір послуги</option>
                     <option>Електрика для житлових приміщень</option>
                     <option>Електрика для комерційних приміщень</option>
@@ -73,10 +73,10 @@ export default function Contact() {
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-slate-dark mb-2">  </label>
-                <textarea rows={4} className="w-full px-3 py-2 border border-border-gray rounded-lg bg-light-gray focus:outline-none focus:ring-2 focus:ring-electric-blue" placeholder="Опишіть ваш проект або потреби"></textarea>
+                <label className="block text-sm font-medium text-slate-dark dark:text-white mb-2">  </label>
+                <textarea rows={4} className="w-full px-3 py-2 border border-border-gray dark:border-slate-700 rounded-lg bg-light-gray dark:bg-slate-700 text-slate-dark dark:text-white focus:outline-none focus:ring-2 focus:ring-electric-blue" placeholder="Опишіть ваш проект або потреби"></textarea>
               </div>
-              <button type="submit" className="w-full bg-electric-blue text-white py-3 rounded-lg text-button font-medium hover:bg-blue-700 transition-colors">
+              <button type="submit" className="w-full bg-electric-blue text-white py-3 rounded-lg text-button font-medium hover:bg-blue-700 transition-colors cursor-pointer">
                 Отримати безкоштовну оцінку
               </button>
             </form>
@@ -85,7 +85,7 @@ export default function Contact() {
           {/* Contact Info */}
           <div className="flex-1 space-y-6">
             {/* Contact Cards */}
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <ContactCard
                 icon={phoneIcon}
                 title="Телефон"
@@ -118,7 +118,7 @@ export default function Contact() {
               <p className="text-body mb-4">
                 Електрична аварія? Ми тут, щоб допомогти вам 24/7.
               </p>
-              <button className="bg-white text-electric-blue px-6 py-3 rounded-lg text-button font-medium hover:bg-gray-100 transition-colors">
+              <button className="bg-white text-electric-blue px-6 py-3 rounded-lg text-button font-medium hover:bg-gray-100 transition-colors cursor-pointer">
                 Викликати аварійну бригаду
               </button>
             </div>

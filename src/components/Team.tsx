@@ -27,17 +27,17 @@ export default function Team() {
   ];
 
   return (
-    <section id="team" className="py-16 px-4">
-      <div className="max-w-[1359px] mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-heading-2 font-bold text-slate-dark mb-4">Наша команда</h2>
-          <p className="text-body-lg text-slate-gray max-w-2xl mx-auto">
-          Над кожним проєктом працюють <span className="text-electric-blue">сертифіковані фахівці</span> — електромонтажники, інженери систем автоматизації та програмісти.
+    <section id="team" className="py-12 md:py-16 px-4 bg-white dark:bg-slate-900">
+      <div className="max-w-[1300px] mx-auto">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl md:text-heading-2 font-bold text-slate-dark dark:text-white mb-4">Наша команда</h2>
+          <p className="text-base md:text-body-lg text-slate-gray dark:text-slate-300 max-w-2xl mx-auto">
+          Над кожним проєктом працюють <span className="text-electric-blue dark:font-normal">сертифіковані фахівці</span> — електромонтажники, інженери систем автоматизації та програмісти.
           </p>
         </div>
         
         {/* Team Grid */}
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {teamMembers.map((member, index) => (
             <TeamMember
               key={index}

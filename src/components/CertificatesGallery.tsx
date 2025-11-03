@@ -89,8 +89,8 @@ export default function CertificatesGallery() {
 
   return (
     <>
-      <div className="py-8 px-4 bg-light-gray">
-        <div className="max-w-[1359px] mx-auto">
+      <div className="py-10 px-4 bg-white dark:bg-slate-900">
+        <div className="max-w-[1300px] mx-auto">
           <div className="text-center mb-8">
             <h3 className="text-heading-3 font-bold text-slate-dark mb-2">
               Сертифікати команди

@@ -6,11 +6,12 @@ interface ProjectCardProps {
   location: string;
   year: string;
   description: string;
+  onClick?: () => void;
 }
 
-export default function ProjectCard({ image, title, category, categoryColor, location, year, description }: ProjectCardProps) {
+export default function ProjectCard({ image, title, category, categoryColor, location, year, description, onClick }: ProjectCardProps) {
   return (
-    <div className="bg-white border border-border-gray rounded-xl overflow-hidden shadow-sm">
+    <div className="bg-white dark:bg-slate-800 border border-border-gray dark:border-slate-700 rounded-xl overflow-hidden shadow-sm cursor-pointer hover:shadow-md transition-shadow" onClick={onClick}>
       <div className="relative h-48">
         <img src={image} alt={title} className="w-full h-full object-cover" />
         <div className={`absolute top-4 left-4 ${categoryColor} px-3 py-1 rounded-lg text-xs font-medium`}>
@@ -18,8 +19,8 @@ export default function ProjectCard({ image, title, category, categoryColor, loc
         </div>
       </div>
       <div className="p-6">
-        <h3 className="text-heading-3 font-semibold text-slate-dark mb-3">{title}</h3>
-        <div className="flex items-center gap-4 mb-3 text-body-sm text-slate-gray">
+        <h3 className="text-heading-3 font-semibold text-slate-dark dark:text-white mb-3">{title}</h3>
+        <div className="flex items-center gap-4 mb-3 text-body-sm text-slate-gray dark:text-slate-300">
           <div className="flex items-center gap-1">
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
@@ -33,7 +34,7 @@ export default function ProjectCard({ image, title, category, categoryColor, loc
             {year}
           </div>
         </div>
-        <p className="text-body-sm text-slate-gray">
+        <p className="text-body-sm text-slate-gray dark:text-slate-300">
           {description}
         </p>
       </div>
