@@ -1,16 +1,17 @@
+import IdeaLamp from './IdeaLamp';
+
 interface ServiceCardProps {
-  icon: React.ReactNode;
   title: string;
   description: string;
   features: string[];
 }
 
-export default function ServiceCard({ icon, title, description, features }: ServiceCardProps) {
+export default function ServiceCard({ title, description, features }: ServiceCardProps) {
   return (
     <div className="service-card bg-white dark:bg-slate-800 border border-border-gray dark:border-slate-700 rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300">
       <div className="text-center mb-4">
         <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center">
-          {icon}
+          <IdeaLamp />
         </div>
         <h3 className="text-heading-3 font-semibold text-slate-dark dark:text-white mb-2">{title}</h3>
         <p className="text-body text-slate-gray dark:text-slate-300 text-center">
