@@ -226,7 +226,7 @@ body {
     var(--main-color) 50%,
     rgba(0, 0, 0, 0) 100%
   );
-  transition: transform 0.5s cubic-bezier(0.37, 1.95, 0.66, 0.56);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .radio-container .glider-container .glider::before {

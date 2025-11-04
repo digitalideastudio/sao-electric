@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface HeaderProps {
   isDark: boolean;
@@ -7,38 +7,147 @@ interface HeaderProps {
 
 export default function Header({ isDark, setIsDark }: HeaderProps) {
   const [selectedSection, setSelectedSection] = useState('about');
+  const isManualScrollRef = useRef(false);
+  const manualScrollTimeoutRef = useRef<number | null>(null);
+  const lockedSectionRef = useRef<string | null>(null);
 
   const scrollToSection = (sectionId: string) => {
+    // Clear any existing timeout
+    if (manualScrollTimeoutRef.current) {
+      clearTimeout(manualScrollTimeoutRef.current);
+    }
+    
     setSelectedSection(sectionId);
+    isManualScrollRef.current = true;
+    
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+      // Calculate target scroll position accounting for header height
+      const headerHeight = 80; // Approximate header height
+      const targetPosition = element.offsetTop - headerHeight;
+      
+      // Use window.scrollTo for more control, especially for last section
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
       });
+      
+      // Wait for scroll to complete by checking scroll position
+      let checkCount = 0;
+      const maxChecks = 40; // Maximum 4 seconds (40 * 100ms)
+      
+      const checkScrollComplete = () => {
+        const currentPosition = window.scrollY;
+        const distance = Math.abs(currentPosition - targetPosition);
+        
+        // If we're close to target (within 20px) or max checks reached, re-enable handler
+        if (distance < 20 || checkCount >= maxChecks) {
+          // Add a delay to ensure scroll handler doesn't interfere
+          manualScrollTimeoutRef.current = window.setTimeout(() => {
+            isManualScrollRef.current = false;
+          }, 300);
+        } else {
+          checkCount++;
+          manualScrollTimeoutRef.current = window.setTimeout(checkScrollComplete, 100);
+        }
+      };
+      
+      // Start checking after initial scroll delay
+      manualScrollTimeoutRef.current = window.setTimeout(checkScrollComplete, 100);
     }
   };
 
   // Update selected section based on scroll position
   useEffect(() => {
     const sections = ['about', 'services', 'team', 'projects']; // Only radio button sections
+    let scrollTimeout: number | null = null;
+    let lastScrollTime = Date.now();
+    let isScrolling = false;
     
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 150; // Offset for header height
+    const updateSection = () => {
+      if (isManualScrollRef.current) {
+        return;
+      }
       
+      // Don't update if section is locked (during scrolling)
+      if (lockedSectionRef.current !== null) {
+        return;
+      }
+      
+      const scrollPosition = window.scrollY;
+      const headerOffset = 150; // Offset for header height
+      
+      // Find the section that we're currently viewing
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i]);
-        if (section && section.offsetTop <= scrollPosition) {
-          setSelectedSection(sections[i]);
-          break;
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionBottom = sectionTop + section.offsetHeight;
+          
+          // Check if scroll position is within this section
+          if (scrollPosition + headerOffset >= sectionTop && scrollPosition < sectionBottom) {
+            setSelectedSection((prev) => {
+              // Only update if it's actually different
+              if (prev !== sections[i]) {
+                return sections[i];
+              }
+              return prev;
+            });
+            break;
+          }
         }
       }
+    };
+    
+    const handleScroll = () => {
+      // Don't update section when user manually clicked a category
+      if (isManualScrollRef.current) {
+        return;
+      }
+      
+      // Update last scroll time
+      lastScrollTime = Date.now();
+      
+      // Lock the current section when scrolling starts
+      if (!isScrolling) {
+        isScrolling = true;
+        // Lock to the current selected section to prevent changes
+        setSelectedSection((current) => {
+          lockedSectionRef.current = current;
+          return current; // Keep it the same
+        });
+      }
+      
+      // Clear any existing timeout
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+      
+      // Only update section after scrolling has completely stopped for 300ms
+      // This prevents jumping while continuously scrolling
+      scrollTimeout = window.setTimeout(() => {
+        const timeSinceLastScroll = Date.now() - lastScrollTime;
+        // Double-check that scrolling has actually stopped
+        if (timeSinceLastScroll >= 300) {
+          isScrolling = false;
+          lockedSectionRef.current = null; // Unlock the section
+          updateSection();
+        }
+      }, 300);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Check initial position
     
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (manualScrollTimeoutRef.current) {
+        clearTimeout(manualScrollTimeoutRef.current);
+      }
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+    };
   }, []);
 
   return (
