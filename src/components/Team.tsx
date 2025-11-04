@@ -4,22 +4,22 @@ import CertificatesGallery from './CertificatesGallery';
 export default function Team() {
   const teamMembers = [
     {
-      image: "/assets/team-member-1.png",
+      image: "/assets/team-member-serhii.jpg",
       name: "Сергій",
       role: "Електромонтажник",
       experience: "10+ років досвіду",
       description: "Спеціалізується на житлових та комерційних електротехнічних системах."
     },
     {
-      image: "/assets/team-member-2.png",
-      name: "Олександр",
+      image: "/assets/team-member-nazar.jpg",
+      name: "Назар",
       role: "Інженер систем автоматизації",
       experience: "5+ років досвіду",
       description: "Спеціалізується на промислових електротехнічних системах та складних електротехнічних системах."
     },
     {
-      image: "/assets/team-member-3.png",
-      name: "Володимир",
+      image: "/assets/team-member-eugene.jpg",
+      name: "Євген",
       role: "Програміст",
       experience: "5+ років досвіду",
       description: "Спеціалізується на програмуванні електротехнічних систем та складних електротехнічних системах."

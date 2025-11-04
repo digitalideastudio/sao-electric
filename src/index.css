@@ -271,6 +271,10 @@ body {
   min-width: 0;
 }
 
+.dark .radio-container label {
+  color: #0f172a; /* slate-900 for dark mode */
+}
+
 .radio-container input:checked + label {
   color: var(--main-color);
 }

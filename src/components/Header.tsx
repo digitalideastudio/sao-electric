@@ -151,7 +151,7 @@ export default function Header({ isDark, setIsDark }: HeaderProps) {
   }, []);
 
   return (
-    <header className="bg-white/95 backdrop-blur-sm border-b border-border-gray sticky top-0 z-50">
+    <header className="bg-[#c5d1f0]/65 backdrop-blur-sm border-b border-border-gray dark:border-slate-700 sticky top-0 z-50">
       <div className="max-w-[1300px] mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -174,7 +174,7 @@ export default function Header({ isDark, setIsDark }: HeaderProps) {
                 type="radio"
                 value="about"
               />
-              <label htmlFor="radio-about" className="text-body">Про нас</label>
+              <label htmlFor="radio-about" className="text-body text-slate-900 dark:text-slate-900">Про нас</label>
               
               <input
                 checked={selectedSection === 'services'}
@@ -184,7 +184,7 @@ export default function Header({ isDark, setIsDark }: HeaderProps) {
                 type="radio"
                 value="services"
               />
-              <label htmlFor="radio-services" className="text-body">Наші послуги</label>
+              <label htmlFor="radio-services" className="text-body text-slate-900 dark:text-slate-900">Наші послуги</label>
               
               <input
                 checked={selectedSection === 'team'}
@@ -194,7 +194,7 @@ export default function Header({ isDark, setIsDark }: HeaderProps) {
                 type="radio"
                 value="team"
               />
-              <label htmlFor="radio-team" className="text-body">Наша команда</label>
+              <label htmlFor="radio-team" className="text-body text-slate-900 dark:text-slate-900">Наша команда</label>
               
               <input
                 checked={selectedSection === 'projects'}
@@ -204,7 +204,7 @@ export default function Header({ isDark, setIsDark }: HeaderProps) {
                 type="radio"
                 value="projects"
               />
-              <label htmlFor="radio-projects" className="text-body">Нещодавні проекти</label>
+              <label htmlFor="radio-projects" className="text-body text-slate-900 dark:text-slate-900">Нещодавні проекти</label>
 
               <div className="glider-container">
                 <div className="glider"></div>

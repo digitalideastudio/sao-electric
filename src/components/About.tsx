@@ -28,7 +28,7 @@ export default function About() {
           
           {/* Right Image */}
           <div className="flex-1 max-w-full md:max-w-[600px] w-full">
-            <img src="/assets/about-image.png" alt="Про SAO Electric" className="w-full h-[250px] md:h-[337px] object-cover rounded-lg shadow-lg" />
+            <img src="/assets/about-image.jpg" alt="Про SAO Electric" className="w-full h-[250px] md:h-[337px] object-cover rounded-lg shadow-lg" />
           </div>
         </div>
         

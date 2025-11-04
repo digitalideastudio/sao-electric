@@ -67,7 +67,7 @@ export default function Hero() {
           
           {/* Right Image */}
           <div className="flex-1 max-w-full md:max-w-[600px] relative w-full">
-            <img src="/assets/hero-image.png" alt="Професійний електрик" className="w-full h-[400px] md:h-[600px] lg:h-[800px] object-cover rounded-lg shadow-2xl" />
+            <img src="/assets/hero-image.jpg" alt="Професійний електрик" className="w-full h-[400px] md:h-[600px] lg:h-[800px] object-cover rounded-lg shadow-2xl" />
             {/* Experience Badge */}
             <div className="absolute -bottom-6 -left-6 bg-electric-blue text-white p-4 rounded-lg shadow-lg">
               <div className="text-2xl font-bold">10+</div>
