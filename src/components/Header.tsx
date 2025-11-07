@@ -10,6 +10,8 @@ export default function Header({ isDark, setIsDark }: HeaderProps) {
   const isManualScrollRef = useRef(false);
   const manualScrollTimeoutRef = useRef<number | null>(null);
   const lockedSectionRef = useRef<string | null>(null);
+  const gliderRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const scrollToSection = (sectionId: string) => {
     // Clear any existing timeout
@@ -150,22 +152,63 @@ export default function Header({ isDark, setIsDark }: HeaderProps) {
     };
   }, []);
 
+  // Update glider position based on selected section
+  useEffect(() => {
+    const updateGlider = () => {
+      if (!gliderRef.current || !containerRef.current) return;
+
+      const labelId = `radio-${selectedSection}`;
+      const label = document.querySelector(`label[for="${labelId}"]`) as HTMLElement;
+      
+      if (label) {
+        const containerRect = containerRef.current.getBoundingClientRect();
+        const labelRect = label.getBoundingClientRect();
+        
+        const left = labelRect.left - containerRect.left;
+        const width = labelRect.width;
+        
+        gliderRef.current.style.left = `${left}px`;
+        gliderRef.current.style.width = `${width}px`;
+      }
+    };
+
+    // Use requestAnimationFrame to ensure DOM is ready
+    requestAnimationFrame(() => {
+      updateGlider();
+    });
+    
+    // Also update on window resize
+    window.addEventListener('resize', updateGlider);
+    
+    return () => {
+      window.removeEventListener('resize', updateGlider);
+    };
+  }, [selectedSection]);
+
   return (
     <header className="bg-[#c5d1f0]/65 backdrop-blur-sm border-b border-border-gray dark:border-slate-700 sticky top-0 z-50">
-      <div className="max-w-[1300px] mx-auto px-4 py-4">
-        <div className="flex justify-between items-center">
+      <div className="max-w-[1300px] mx-auto px-6 py-4">
+        <div className="flex justify-between items-center gap-6">
           {/* Logo */}
-          <div className="flex items-center gap-2">
+          <div 
+            className="flex items-center gap-2 cursor-pointer"
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+              });
+            }}
+          >
             <img 
               src="/assets/sao_electric.svg" 
               alt="SAO Electric" 
-              className="h-10 md:h-13 w-auto"
+              className="h-14 md:h-20 w-auto"
             />
           </div>
           
-          {/* Navigation */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-4 lg:gap-6">
-            <div className="radio-container">
+            <div className="radio-container" ref={containerRef}>
               <input
                 checked={selectedSection === 'about'}
                 onChange={(e) => e.target.checked && scrollToSection('about')}
@@ -207,19 +250,36 @@ export default function Header({ isDark, setIsDark }: HeaderProps) {
               <label htmlFor="radio-projects" className="text-body text-slate-900 dark:text-slate-900">Нещодавні проекти</label>
 
               <div className="glider-container">
-                <div className="glider"></div>
+                <div className="glider" ref={gliderRef}></div>
               </div>
             </div>
             
-            <button onClick={() => scrollToSection('contact')} className="bg-electric-blue text-white px-4 py-2 rounded-lg text-button font-medium hover:bg-blue-700 transition-colors cursor-pointer">Зв'язатися з нами</button>
+            <button onClick={() => scrollToSection('contact')} className="bg-electric-blue text-white px-4 py-2 rounded-lg text-button font-medium hover:bg-blue-700 transition-colors cursor-pointer flex-shrink-0">Зв'язатися з нами</button>
             <input
               type="checkbox"
-              className="theme-toggle"
+              className="theme-toggle flex-shrink-0"
               checked={isDark}
               onChange={(e) => setIsDark(e.target.checked)}
               aria-label="Toggle theme"
             />
           </nav>
+
+          {/* Mobile Navigation - Button and Toggle */}
+          <div className="md:hidden flex items-center gap-3">
+            <button 
+              onClick={() => scrollToSection('contact')} 
+              className="bg-electric-blue text-white px-3 py-2 rounded-lg text-button font-medium hover:bg-blue-700 transition-colors cursor-pointer flex-shrink-0 text-sm"
+            >
+              Зв'язатись з нами
+            </button>
+            <input
+              type="checkbox"
+              className="theme-toggle flex-shrink-0"
+              checked={isDark}
+              onChange={(e) => setIsDark(e.target.checked)}
+              aria-label="Toggle theme"
+            />
+          </div>
         </div>
       </div>
     </header>

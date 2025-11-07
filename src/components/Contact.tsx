@@ -89,13 +89,13 @@ export default function Contact() {
               <ContactCard
                 icon={phoneIcon}
                 title="Телефон"
-                value="(555) 123-4567"
+                value="+380 (99) 740 27 30"
                 subtitle="Викличте нас в будь-який час"
               />
               <ContactCard
                 icon={emailIcon}
                 title="Email пошта"
-                value="info@electricpro.com"
+                value="saoelectric.ua@gmail.com"
                 subtitle="Надішліть нам повідомлення"
               />
               <ContactCard

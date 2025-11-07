@@ -17,13 +17,13 @@ export default function Hero() {
           <div className="flex-1 max-w-full md:max-w-[600px]">
             <h1 className="text-3xl md:text-hero font-bold text-slate-dark dark:text-white mb-4 md:mb-6">
               S<span className="text-red">A</span>O <span className="text-electric-blue dark:font-normal">Electric</span><br />
-              Технології комфорту <br/> у вашому домі
+              Ваша точка доступу <br/>  у світ смарт технологій
             </h1>
             
             <p className="text-base md:text-body-lg text-slate-gray dark:text-slate-300 mb-6">
             SAO Electric — це команда електриків, інженерів і автоматників, які створюють електросистеми нового покоління.
             <br/>Ми поєднуємо класичну електрику з сучасними технологіями «Розумного Дому», щоб кожен дім, офіс чи шоурум працював ефективно, безпечно й комфортно.
-            <br/>Наша філософія проста: <span className="text-slate-gray font-bold">електрика має бути непомітною, але ідеально працювати</span>.
+            <br/>Наша філософія проста: <span className="text-slate-gray dark:text-white font-bold">електрика має бути непомітною, але ідеально працювати</span>.
             <br/>Ми цінуємо чистий монтаж, продуману логіку керування й акуратність у кожній деталі — від кабелю до інтерфейсу на iPad.            </p>
             
             {/* Features */}

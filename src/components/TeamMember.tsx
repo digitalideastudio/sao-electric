@@ -10,11 +10,11 @@ interface TeamMemberProps {
 
 export default function TeamMember({ image, name, role, experience, description }: TeamMemberProps) {
   return (
-    <div className="team-member-card-wrapper relative">
+    <div className="group relative overflow-visible mt-[60px]">
       {/* Lamp - only visible in dark theme on hover */}
       <Lamp />
       
-      <div className="team-member-card bg-white dark:bg-slate-800 border border-border-gray dark:border-slate-700 rounded-xl overflow-hidden shadow-sm relative">
+      <div className="relative z-[1] bg-white dark:bg-slate-800 border border-border-gray dark:border-slate-700 rounded-xl overflow-hidden shadow-sm">
         <div className="relative h-64">
           <img src={image} alt={name} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
