@@ -169,7 +169,7 @@ function ProjectCarousel({ images, projectTitle }: { images: string[]; projectTi
         <>
           <button
             onClick={handlePrevious}
-            className="absolute left-2 md:left-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 active:bg-black/90 text-white rounded-full p-2.5 md:p-2 z-20 transition-all touch-manipulation"
+            className="absolute left-2 md:left-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 active:bg-black/90 text-white rounded-full p-2.5 md:p-2 z-20 transition-all touch-manipulation cursor-pointer"
             aria-label="Previous image"
           >
             <svg className="w-7 h-7 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -178,7 +178,7 @@ function ProjectCarousel({ images, projectTitle }: { images: string[]; projectTi
           </button>
           <button
             onClick={handleNext}
-            className="absolute right-2 md:right-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 active:bg-black/90 text-white rounded-full p-2.5 md:p-2 z-20 transition-all touch-manipulation"
+            className="absolute right-2 md:right-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 active:bg-black/90 text-white rounded-full p-2.5 md:p-2 z-20 transition-all touch-manipulation cursor-pointer"
             aria-label="Next image"
           >
             <svg className="w-7 h-7 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -197,7 +197,7 @@ function ProjectCarousel({ images, projectTitle }: { images: string[]; projectTi
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`transition-all rounded-full touch-manipulation ${
+                className={`transition-all rounded-full touch-manipulation cursor-pointer ${
                   index === currentIndex
                     ? 'w-8 h-2 bg-electric-blue'
                     : 'w-2 h-2 bg-slate-gray hover:bg-slate-400'

@@ -1,7 +1,7 @@
 const IdeaLamp = () => {
   return (
     <div className="flex justify-center items-center w-full">
-      <button className="relative list-none border-none bg-transparent rounded-full cursor-grab w-10 h-10 flex items-center justify-center p-0 m-0 transition-all duration-300 drop-shadow-[0_0_0_rgba(244,175,3,0)] group-hover:drop-shadow-[0_0_8px_rgba(244,175,3,0.6),0_0_16px_rgba(244,175,3,0.4)]">
+      <button className="relative list-none border-none bg-transparent rounded-full cursor-pointer cursor-grab w-10 h-10 flex items-center justify-center p-0 m-0 transition-all duration-300 drop-shadow-[0_0_0_rgba(244,175,3,0)] group-hover:drop-shadow-[0_0_8px_rgba(244,175,3,0.6),0_0_16px_rgba(244,175,3,0.4)]">
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
           height="2.5em" 

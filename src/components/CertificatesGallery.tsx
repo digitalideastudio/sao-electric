@@ -95,8 +95,8 @@ export default function CertificatesGallery() {
             <h3 className="text-heading-3 font-bold text-slate-dark dark:text-white mb-2">
               Сертифікати команди
             </h3>
-            <p className="text-body text-slate-gray">
-              Наші <span className="text-electric-blue">кваліфікації та сертифікати</span>
+            <p className="text-body text-slate-300">
+              Наші кваліфікації та сертифікати
             </p>
           </div>
 
@@ -164,7 +164,7 @@ export default function CertificatesGallery() {
           <div className="relative max-w-4xl max-h-full">
             <button
               onClick={closeModal}
-              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors cursor-pointer"
             >
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
