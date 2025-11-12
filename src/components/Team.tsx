@@ -27,7 +27,7 @@ export default function Team() {
   ];
 
   return (
-    <section id="team" className="py-12 md:py-16 px-4 bg-white dark:bg-slate-900">
+    <section id="team" className="py-12 md:py-16 px-4 bg-white dark:bg-black/20 dark:backdrop-blur-xl">
       <div className="max-w-[1300px] mx-auto">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-2xl md:text-heading-2 font-bold text-slate-dark dark:text-white mb-4">Наша команда</h2>

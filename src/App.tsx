@@ -47,7 +47,7 @@ function App() {
   }, [isDark]);
 
   return (
-    <div className="font-inter bg-white dark:bg-slate-900">
+    <div className="font-inter bg-white dark:bg-transparent">
       <Header isDark={isDark} setIsDark={setIsDark} />
       <Hero />
       <About />

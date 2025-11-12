@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import ProjectCard from './ProjectCard';
 
 // Carousel component for project images
@@ -123,7 +124,7 @@ function ProjectCarousel({ images, projectTitle }: { images: string[]; projectTi
 
   if (validImages.length === 0) {
     return (
-      <div className="relative aspect-video bg-light-gray dark:bg-slate-700 rounded-lg overflow-hidden mb-4 flex items-center justify-center">
+      <div className="relative aspect-video bg-light-gray rounded-lg overflow-hidden mb-4 flex items-center justify-center">
         <div className="text-slate-gray">Завантаження...</div>
       </div>
     );
@@ -132,7 +133,7 @@ function ProjectCarousel({ images, projectTitle }: { images: string[]; projectTi
   return (
     <div className="relative w-full flex flex-col" ref={carouselRef}>
       {/* Main Image Container - Bigger on mobile */}
-      <div className="relative min-h-[60vh] md:min-h-0 md:aspect-video bg-light-gray dark:bg-slate-700 rounded-lg overflow-hidden">
+      <div className="relative min-h-[60vh] md:min-h-0 md:aspect-video bg-light-gray rounded-lg overflow-hidden">
         {validImages.map((imageSrc, index) => {
           if (failedImages.has(index)) return null;
           
@@ -233,12 +234,58 @@ export default function Projects() {
   // Prevent body scroll when modal is open
   useEffect(() => {
     if (selectedProject !== null) {
+      // Prevent scroll by fixing position - capture scroll position immediately
+      const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+      
+      // Store scroll position before making any changes
+      document.body.setAttribute('data-scroll-y', scrollY.toString());
+      
+      // Apply styles to prevent scrolling
       document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      document.body.style.left = '0';
+      document.body.style.right = '0';
     } else {
-      document.body.style.overflow = 'unset';
+      // Restore scroll position
+      const scrollY = document.body.getAttribute('data-scroll-y');
+      
+      // Remove fixed positioning first
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      
+      // Restore scroll position after a brief delay to ensure styles are reset
+      if (scrollY) {
+        const scrollPosition = parseInt(scrollY, 10);
+        // Use requestAnimationFrame to ensure DOM is ready
+        requestAnimationFrame(() => {
+          window.scrollTo(0, scrollPosition);
+        });
+      }
+      
+      document.body.removeAttribute('data-scroll-y');
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      // Cleanup on unmount
+      const scrollY = document.body.getAttribute('data-scroll-y');
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      if (scrollY) {
+        const scrollPosition = parseInt(scrollY, 10);
+        requestAnimationFrame(() => {
+          window.scrollTo(0, scrollPosition);
+        });
+        document.body.removeAttribute('data-scroll-y');
+      }
     };
   }, [selectedProject]);
 
@@ -306,7 +353,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-12 md:py-16 px-4 bg-white dark:bg-slate-900">
+    <section id="projects" className="py-12 md:py-16 px-4 bg-white dark:bg-black/20 dark:backdrop-blur-xl">
       <div className="max-w-[1300px] mx-auto">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-2xl md:text-heading-2 font-bold text-slate-dark dark:text-white mb-4">Нещодавні проекти</h2>
@@ -333,10 +380,20 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* Project Gallery Modal */}
-      {selectedProject !== null && (
+      {/* Project Gallery Modal - Rendered via Portal */}
+      {selectedProject !== null && typeof document !== 'undefined' && createPortal(
         <div 
-          className="fixed inset-0 bg-black/80 z-50 flex items-start md:items-center justify-center p-0 md:p-4 overflow-y-auto"
+          className="fixed inset-0 bg-black/80 z-[9999] flex items-start md:items-center justify-center p-0 md:p-4 overflow-y-auto will-change-[opacity]"
+          style={{ 
+            animation: 'fadeIn 0.2s ease-out', 
+            height: '100vh', 
+            width: '100vw',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0
+          }}
           onClick={(e) => {
             if (e.target === e.currentTarget) {
               setSelectedProject(null);
@@ -349,7 +406,7 @@ export default function Projects() {
             }
           }}
         >
-          <div className="relative max-w-6xl w-full min-h-full md:min-h-0 md:h-auto md:my-8" onClick={(e) => e.stopPropagation()}>
+          <div className="relative max-w-6xl w-full h-full md:h-auto min-h-full md:min-h-0 md:my-8 will-change-[transform,opacity]" style={{ animation: 'scaleIn 0.2s ease-out' }} onClick={(e) => e.stopPropagation()}>
             <button
               onClick={(e) => {
                 e.preventDefault();
@@ -374,16 +431,16 @@ export default function Projects() {
               </svg>
             </button>
             
-            <div className="bg-white dark:bg-slate-800 rounded-none md:rounded-lg overflow-hidden shadow-2xl min-h-full md:min-h-0 md:h-auto flex flex-col">
+            <div className="bg-white rounded-none md:rounded-lg overflow-hidden shadow-2xl h-full md:h-auto min-h-full md:min-h-0 flex flex-col">
               <div className="p-3 md:p-6">
                 <div className="flex flex-col md:flex-row md:items-center gap-3 mb-4">
                   <span className={`${projects[selectedProject].categoryColor} px-3 py-1 rounded-lg text-xs font-medium w-fit`}>
                     {projects[selectedProject].category}
                   </span>
-                  <h3 className="text-xl md:text-heading-2 font-bold text-slate-dark dark:text-white">{projects[selectedProject].title}</h3>
+                  <h3 className="text-xl md:text-heading-2 font-bold text-slate-dark">{projects[selectedProject].title}</h3>
                 </div>
                 
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4 text-body-sm text-slate-gray dark:text-slate-300">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4 text-body-sm text-slate-gray">
                   <div className="flex items-center gap-1">
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
@@ -426,16 +483,17 @@ export default function Projects() {
                 </div>
                 
                 {/* Description annotation */}
-                <div className="mt-3 md:mt-4 p-3 md:p-4 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-border-gray dark:border-slate-600">
-                  <p className="text-sm md:text-body text-slate-gray dark:text-slate-300">
-                    <span className="font-semibold text-slate-dark dark:text-white">Опис проєкту: </span>
+                <div className="mt-3 md:mt-4 p-3 md:p-4 bg-slate-50 rounded-lg border border-border-gray">
+                  <p className="text-sm md:text-body text-slate-gray">
+                    <span className="font-semibold text-slate-dark">Опис проєкту: </span>
                     {projects[selectedProject].description}
                   </p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </section>
   );

@@ -10,7 +10,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="bg-white dark:bg-slate-900 py-12 md:py-20 px-4">
+    <section className="bg-white dark:bg-black/20 dark:backdrop-blur-xl py-12 md:py-20 px-4">
       <div className="max-w-[1300px] mx-auto">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
           {/* Left Content */}

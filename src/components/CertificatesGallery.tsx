@@ -1,7 +1,66 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 export default function CertificatesGallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (selectedImage !== null) {
+      // Prevent scroll by fixing position - capture scroll position immediately
+      const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+      
+      // Store scroll position before making any changes
+      document.body.setAttribute('data-scroll-y', scrollY.toString());
+      
+      // Apply styles to prevent scrolling
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+    } else {
+      // Restore scroll position
+      const scrollY = document.body.getAttribute('data-scroll-y');
+      
+      // Remove fixed positioning first
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      
+      // Restore scroll position after a brief delay to ensure styles are reset
+      if (scrollY) {
+        const scrollPosition = parseInt(scrollY, 10);
+        // Use requestAnimationFrame to ensure DOM is ready
+        requestAnimationFrame(() => {
+          window.scrollTo(0, scrollPosition);
+        });
+      }
+      
+      document.body.removeAttribute('data-scroll-y');
+    }
+    return () => {
+      // Cleanup on unmount
+      const scrollY = document.body.getAttribute('data-scroll-y');
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      if (scrollY) {
+        const scrollPosition = parseInt(scrollY, 10);
+        requestAnimationFrame(() => {
+          window.scrollTo(0, scrollPosition);
+        });
+        document.body.removeAttribute('data-scroll-y');
+      }
+    };
+  }, [selectedImage]);
 
   // Placeholder certificate data - replace with actual certificate images
   const certificates = [
@@ -89,13 +148,13 @@ export default function CertificatesGallery() {
 
   return (
     <>
-      <div className="py-10 px-4 bg-white dark:bg-slate-900">
+      <div className="pt-12 md:pt-16">
         <div className="max-w-[1300px] mx-auto">
           <div className="text-center mb-8">
             <h3 className="text-heading-3 font-bold text-slate-dark dark:text-white mb-2">
               Сертифікати команди
             </h3>
-            <p className="text-body text-slate-300">
+            <p className="text-body text-slate-gray dark:text-slate-300">
               Наші кваліфікації та сертифікати
             </p>
           </div>
@@ -155,13 +214,23 @@ export default function CertificatesGallery() {
         </div>
       </div>
 
-      {/* Modal for enlarged certificate view */}
-      {selectedImage && (
+      {/* Modal for enlarged certificate view - Rendered via Portal */}
+      {selectedImage && typeof document !== 'undefined' && createPortal(
         <div 
-          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/80 z-[9999] flex items-center justify-center p-4 will-change-[opacity]"
           onClick={closeModal}
+          style={{ 
+            animation: 'fadeIn 0.2s ease-out', 
+            height: '100vh', 
+            width: '100vw',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0
+          }}
         >
-          <div className="relative max-w-4xl max-h-full">
+          <div className="relative max-w-4xl w-full max-h-full will-change-[transform,opacity]" style={{ animation: 'scaleIn 0.2s ease-out' }}>
             <button
               onClick={closeModal}
               className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors cursor-pointer"
@@ -198,7 +267,8 @@ export default function CertificatesGallery() {
               </div>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
