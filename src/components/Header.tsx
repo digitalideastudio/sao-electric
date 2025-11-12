@@ -187,7 +187,7 @@ export default function Header({ isDark, setIsDark }: HeaderProps) {
 
   return (
     <header className="bg-[#c5d1f0]/65 backdrop-blur-sm border-b border-border-gray dark:border-slate-700 sticky top-0 z-50">
-      <div className="max-w-[1300px] mx-auto px-6 py-3">
+      <div className="max-w-[1300px] mx-auto px-6 py-3 md:pt-0 md:pb-3">
         <div className="flex justify-between items-center gap-6">
           {/* Logo */}
           <div 
@@ -202,12 +202,12 @@ export default function Header({ isDark, setIsDark }: HeaderProps) {
             <img 
               src="/assets/sao_electric.svg" 
               alt="SAO Electric" 
-              className="h-12 md:h-15 w-auto"
+              className="h-12 md:h-13 w-auto"
             />
           </div>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-4 lg:gap-6">
+          <nav className="hidden md:flex items-start gap-4 lg:gap-6">
             <div className="radio-container" ref={containerRef}>
               <input
                 checked={selectedSection === 'about'}
@@ -254,10 +254,10 @@ export default function Header({ isDark, setIsDark }: HeaderProps) {
               </div>
             </div>
             
-            <button onClick={() => scrollToSection('contact')} className="bg-electric-blue text-white px-4 py-2 rounded-lg text-button font-medium hover:bg-blue-700 transition-colors cursor-pointer flex-shrink-0">Зв'язатися з нами</button>
+            <button onClick={() => scrollToSection('contact')} className="mt-0 md:mt-5 bg-electric-blue text-white px-4 py-2 rounded-lg text-button font-medium hover:bg-blue-700 transition-colors cursor-pointer flex-shrink-0">Зв'язатися з нами</button>
             <input
               type="checkbox"
-              className="theme-toggle flex-shrink-0"
+              className="theme-toggle flex-shrink-0 mt-0 md:mt-6"
               checked={isDark}
               onChange={(e) => setIsDark(e.target.checked)}
               aria-label="Toggle theme"

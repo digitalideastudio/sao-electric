@@ -134,7 +134,7 @@ body {
 /* Theme Toggle Switch from Uiverse.io - JkHuger */
 /* Complex animation styles - kept minimal CSS for toggle functionality */
 .theme-toggle {
-  @apply inline-flex items-center m-auto p-[0.15em] w-12 h-6 cursor-pointer;
+  @apply inline-flex items-center p-[0.15em] w-12 h-6 cursor-pointer;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 0.75em;
   box-shadow: 0.125em 0.125em 0 0.125em rgba(0, 0, 0, 0.3) inset;
