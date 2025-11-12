@@ -352,6 +352,26 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Team member images: grayscale by default, colorful on hover (desktop) or click (mobile) in dark mode */
+.dark .team-member-image {
+  filter: grayscale(100%);
+  transition: filter 1000ms ease-in-out;
+}
+
+/* Desktop: colorful on hover */
+@media (hover: hover) {
+  .dark .group:hover .team-member-image {
+    filter: grayscale(0%);
+  }
+}
+
+/* Mobile: colorful when clicked */
+@media (hover: none) {
+  .dark .team-member-image.team-member-active {
+    filter: grayscale(0%);
+  }
+}
+
 /* Modal animations for smooth performance */
 @keyframes fadeIn {
   from {

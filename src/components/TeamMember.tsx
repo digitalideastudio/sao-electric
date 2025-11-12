@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from 'react';
 import Lamp from './Lamp';
 
 interface TeamMemberProps {
@@ -9,8 +10,36 @@ interface TeamMemberProps {
 }
 
 export default function TeamMember({ image, name, role, experience, description }: TeamMemberProps) {
+  const [isActive, setIsActive] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: Event) => {
+      if (cardRef.current && !cardRef.current.contains(event.target as Node)) {
+        setIsActive(false);
+      }
+    };
+
+    if (isActive) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isActive]);
+
   return (
-    <div className="group relative overflow-visible w-full h-full flex flex-col">
+    <div 
+      ref={cardRef}
+      className="group relative overflow-visible w-full h-full flex flex-col"
+      onClick={(e) => {
+        e.stopPropagation();
+        setIsActive(!isActive);
+      }}
+    >
       {/* Lamp - only visible in dark theme on hover */}
       <Lamp />
       
@@ -19,7 +48,7 @@ export default function TeamMember({ image, name, role, experience, description 
           <img 
             src={image} 
             alt={name} 
-            className="w-full h-full object-cover dark:grayscale dark:group-hover:grayscale-0 transition-all duration-1000 ease-in-out" 
+            className={`team-member-image w-full h-full object-cover transition-all duration-1000 ease-in-out ${isActive ? 'team-member-active' : ''}`}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
           <div className="absolute bottom-4 left-4 bg-electric-blue/80 text-white px-3 py-1 rounded-lg text-sm font-medium">
