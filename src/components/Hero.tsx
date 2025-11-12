@@ -59,7 +59,7 @@ export default function Hero() {
               <button onClick={() => scrollToSection('contact')} className="bg-electric-blue text-white px-6 py-3 rounded-lg text-button font-medium hover:bg-blue-700 transition-colors cursor-pointer">
               Підібрати рішення для мого дому
               </button>
-              <button onClick={() => scrollToSection('services')} className="border border-electric-blue text-electric-blue dark:font-normal px-6 py-3 rounded-lg text-button font-medium hover:bg-electric-blue hover:text-white transition-colors cursor-pointer">
+              <button onClick={() => scrollToSection('services')} className="border dark:border-white dark:text-white border-electric-blue text-electric-blue dark:font-normal px-6 py-3 rounded-lg text-button font-medium hover:bg-electric-blue hover:text-white transition-colors cursor-pointer">
               Дізнатись більше
               </button>
             </div>
