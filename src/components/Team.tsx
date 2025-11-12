@@ -32,7 +32,7 @@ export default function Team() {
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-2xl md:text-heading-2 font-bold text-slate-dark dark:text-white mb-4">Наша команда</h2>
           <p className="text-base md:text-body-lg text-slate-gray dark:text-slate-300 max-w-2xl mx-auto">
-          Над кожним проєктом працюють <span className="text-electric-blue dark:font-normal">сертифіковані фахівці</span> — електромонтажники, інженери систем автоматизації та програмісти.
+          Над кожним проєктом працюють <span className="text-electric-blue dark:text-[#ff8800] dark:font-normal">сертифіковані фахівці</span> — електромонтажники, інженери систем автоматизації та програмісти.
           </p>
         </div>
         
