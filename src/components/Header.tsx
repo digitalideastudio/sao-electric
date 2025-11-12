@@ -187,7 +187,7 @@ export default function Header({ isDark, setIsDark }: HeaderProps) {
 
   return (
     <header className="bg-[#c5d1f0]/65 backdrop-blur-sm border-b border-border-gray dark:border-slate-700 sticky top-0 z-50">
-      <div className="max-w-[1300px] mx-auto px-6 py-4">
+      <div className="max-w-[1300px] mx-auto px-6 py-3">
         <div className="flex justify-between items-center gap-6">
           {/* Logo */}
           <div 
@@ -202,7 +202,7 @@ export default function Header({ isDark, setIsDark }: HeaderProps) {
             <img 
               src="/assets/sao_electric.svg" 
               alt="SAO Electric" 
-              className="h-14 md:h-20 w-auto"
+              className="h-12 md:h-15 w-auto"
             />
           </div>
           

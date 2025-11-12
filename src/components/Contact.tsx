@@ -118,7 +118,10 @@ export default function Contact() {
               <p className="text-body mb-4">
                 Електрична аварія? Ми тут, щоб допомогти вам 24/7.
               </p>
-              <button className="bg-white text-electric-blue px-6 py-3 rounded-lg text-button font-medium hover:bg-gray-100 transition-colors cursor-pointer">
+              <button 
+                onClick={() => window.location.href = 'tel:+380997402730'}
+                className="bg-white text-electric-blue px-6 py-3 rounded-lg text-button font-medium hover:bg-gray-100 transition-colors cursor-pointer"
+              >
                 Викликати аварійну бригаду
               </button>
             </div>
