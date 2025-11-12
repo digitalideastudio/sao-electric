@@ -103,17 +103,13 @@ const Particles = ({
   particleSpread = 10,
   speed = 0.1,
   particleColors,
-  moveParticlesOnHover = false,
-  particleHoverFactor = 1,
   alphaParticles = false,
-  particleBaseSize = 100,
+  particleBaseSize = 60,
   sizeRandomness = 1,
   cameraDistance = 20,
-  disableRotation = true,
   className
 }: ParticlesProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const mouseRef = useRef({ x: 0, y: 0 });
   
   // Memoize particleColors to prevent unnecessary re-renders
   const stableParticleColors = useMemo(() => {
@@ -123,6 +119,8 @@ const Particles = ({
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
+
+    console.log('Particles component initialized - NO mouse interaction, NO rotation');
 
     const renderer = new Renderer({ depth: false, alpha: true });
     const gl = renderer.gl;
@@ -147,17 +145,6 @@ const Particles = ({
     };
     window.addEventListener('resize', resize, false);
     resize();
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const rect = container.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-      const y = -(((e.clientY - rect.top) / rect.height) * 2 - 1);
-      mouseRef.current = { x, y };
-    };
-
-    if (moveParticlesOnHover) {
-      window.addEventListener('mousemove', handleMouseMove);
-    }
 
     const count = particleCount;
     const positions = new Float32Array(count * 3);
@@ -202,31 +189,28 @@ const Particles = ({
 
     const particles = new Mesh(gl, { mode: gl.POINTS, geometry, program });
 
+    // FORCE position and rotation to 0 - NO mouse interaction, NO rotation
+    particles.position.set(0, 0, 0);
+    particles.rotation.set(0, 0, 0);
+    particles.matrixAutoUpdate = false;
+    particles.matrix.identity();
+
     let animationFrameId: number;
-    let lastTime = performance.now();
-    let elapsed = 0;
 
-    const update = (t: number) => {
+    const update = () => {
       animationFrameId = requestAnimationFrame(update);
-      const delta = t - lastTime;
-      lastTime = t;
-      elapsed += delta * speed;
-
-      program.uniforms.uTime.value = elapsed * 0.001;
-
-      if (moveParticlesOnHover) {
-        particles.position.x = -mouseRef.current.x * particleHoverFactor;
-        particles.position.y = -mouseRef.current.y * particleHoverFactor;
-      } else {
-        particles.position.x = 0;
-        particles.position.y = 0;
-      }
-
-      if (!disableRotation) {
-        particles.rotation.x = Math.sin(elapsed * 0.0002) * 0.1;
-        particles.rotation.y = Math.cos(elapsed * 0.0005) * 0.15;
-        particles.rotation.z += 0.01 * speed;
-      }
+      
+      // COMPLETELY FREEZE everything - no animation, no movement, no rotation
+      // Set time to 0 to stop shader-based sine wave animations
+      program.uniforms.uTime.value = 0;
+      
+      // Force position and rotation to exactly 0
+      particles.position.set(0, 0, 0);
+      particles.rotation.set(0, 0, 0);
+      
+      // Also ensure the mesh matrix is identity (no transformations)
+      particles.matrix.identity();
+      particles.matrixAutoUpdate = false;
 
       renderer.render({ scene: particles, camera });
     };
@@ -235,9 +219,6 @@ const Particles = ({
 
     return () => {
       window.removeEventListener('resize', resize);
-      if (moveParticlesOnHover) {
-        window.removeEventListener('mousemove', handleMouseMove);
-      }
       cancelAnimationFrame(animationFrameId);
       if (container.contains(gl.canvas)) {
         container.removeChild(gl.canvas);
@@ -247,13 +228,10 @@ const Particles = ({
     particleCount,
     particleSpread,
     speed,
-    moveParticlesOnHover,
-    particleHoverFactor,
     alphaParticles,
     particleBaseSize,
     sizeRandomness,
     cameraDistance,
-    disableRotation,
     stableParticleColors
   ]);
 
