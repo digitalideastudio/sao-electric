@@ -406,31 +406,21 @@ export default function Projects() {
             }
           }}
         >
-          <div className="relative max-w-6xl w-full h-full md:h-auto min-h-full md:min-h-0 md:my-8 will-change-[transform,opacity]" style={{ animation: 'scaleIn 0.2s ease-out' }} onClick={(e) => e.stopPropagation()}>
+          <div className="relative max-w-6xl w-full h-full md:h-auto min-h-full md:min-h-0 md:my-8 will-change-[transform,opacity]" style={{ animation: 'scaleIn 0.2s ease-out' }}>
             <button
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
                 setSelectedProject(null);
               }}
-              onTouchStart={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-              }}
-              onTouchEnd={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                setSelectedProject(null);
-              }}
-              className="fixed top-3 right-3 md:absolute md:top-4 md:right-4 md:-top-12 md:right-0 text-white hover:text-gray-300 active:text-gray-400 transition-colors cursor-pointer z-[60] p-2 md:p-2 touch-manipulation bg-black/50 md:bg-transparent rounded-full md:rounded-none backdrop-blur-sm md:backdrop-blur-none"
-              aria-label="Close modal"
-              type="button"
+              className="fixed top-4 right-4 md:absolute md:-top-12 md:right-0 text-black md:text-white hover:text-gray-700 md:hover:text-gray-300 transition-colors cursor-pointer z-[10000] bg-white/90 md:bg-transparent rounded-full md:rounded-none p-2 md:p-0 shadow-lg md:shadow-none"
             >
-              <svg className="w-6 h-6 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
             
+            <div onClick={(e) => e.stopPropagation()}>
             <div className="bg-white rounded-none md:rounded-lg overflow-hidden shadow-2xl h-full md:h-auto min-h-full md:min-h-0 flex flex-col">
               <div className="p-3 md:p-6">
                 <div className="flex flex-col md:flex-row md:items-center gap-3 mb-4">
@@ -490,6 +480,7 @@ export default function Projects() {
                   </p>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>,
