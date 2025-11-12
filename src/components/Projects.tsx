@@ -353,7 +353,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-12 md:py-16 px-4 bg-white dark:bg-black/20 dark:backdrop-blur-xl">
+    <section id="projects" className="py-12 md:py-16 px-4 bg-white dark:bg-black/20">
       <div className="max-w-[1300px] mx-auto">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-2xl md:text-heading-2 font-bold text-slate-dark dark:text-white mb-4">Нещодавні проекти</h2>

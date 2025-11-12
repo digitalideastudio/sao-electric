@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -7,7 +7,7 @@ import Team from './components/Team';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Plasma from './components/Plasma';
+import Particles from './components/Particles';
 
 function App() {
   const [isDark, setIsDark] = useState<boolean>(false);
@@ -47,21 +47,26 @@ function App() {
     }
   }, [isDark]);
 
+  // Memoize particleColors to prevent array recreation on every render
+  const particleColors = useMemo(() => ['#ffffff', '#ffffff'], []);
+
   return (
     <div className="font-inter bg-white dark:bg-transparent relative min-h-screen">
       {isDark && (
         <div style={{ width: '100%', height: '100vh', position: 'fixed', top: 0, left: 0, zIndex: 0, overflow: 'hidden' }}>
-          <Plasma
-            color="#8384D6"
-            speed={0.6}
-            direction="forward"
-            scale={1.1}
-            opacity={0.8}
-            mouseInteractive={true}
+          <Particles
+            particleColors={particleColors}
+            particleCount={200}
+            particleSpread={10}
+            speed={0.1}
+            particleBaseSize={100}
+            moveParticlesOnHover={true}
+            alphaParticles={false}
+            disableRotation={false}
           />
         </div>
       )}
-      <div className="relative z-10">
+      <div className="relative z-10" style={{ position: 'relative' }}>
         <Header isDark={isDark} setIsDark={setIsDark} />
         <Hero />
         <About />

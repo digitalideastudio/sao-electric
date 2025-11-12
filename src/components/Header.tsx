@@ -186,7 +186,7 @@ export default function Header({ isDark, setIsDark }: HeaderProps) {
   }, [selectedSection]);
 
   return (
-    <header className="bg-[#c5d1f0]/65 backdrop-blur-sm border-b border-border-gray dark:border-slate-700 sticky top-0 z-50">
+    <header className="bg-[#c5d1f0]/65 backdrop-blur-sm dark:backdrop-blur-none border-b border-border-gray dark:border-slate-700 sticky top-0 z-50">
       <div className="max-w-[1300px] mx-auto px-6 py-3 md:pt-0 md:pb-3">
         <div className="flex justify-between items-center gap-6">
           {/* Logo */}
