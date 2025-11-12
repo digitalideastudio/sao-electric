@@ -7,6 +7,7 @@ import Team from './components/Team';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Plasma from './components/Plasma';
 
 function App() {
   const [isDark, setIsDark] = useState<boolean>(false);
@@ -47,15 +48,29 @@ function App() {
   }, [isDark]);
 
   return (
-    <div className="font-inter bg-white dark:bg-transparent">
-      <Header isDark={isDark} setIsDark={setIsDark} />
-      <Hero />
-      <About />
-      <Services />
-      <Team />
-      <Projects />
-      <Contact />
-      <Footer />
+    <div className="font-inter bg-white dark:bg-transparent relative min-h-screen">
+      {isDark && (
+        <div style={{ width: '100%', height: '100vh', position: 'fixed', top: 0, left: 0, zIndex: 0, overflow: 'hidden' }}>
+          <Plasma
+            color="#8384D6"
+            speed={0.6}
+            direction="forward"
+            scale={1.1}
+            opacity={0.8}
+            mouseInteractive={true}
+          />
+        </div>
+      )}
+      <div className="relative z-10">
+        <Header isDark={isDark} setIsDark={setIsDark} />
+        <Hero />
+        <About />
+        <Services />
+        <Team />
+        <Projects />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 }
